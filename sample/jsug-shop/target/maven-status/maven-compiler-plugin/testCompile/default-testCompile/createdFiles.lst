@@ -1,0 +1,10 @@
+jsug\domain\repository\goods\GoodsRepositoryTest.class
+jsug\domain\repository\order\OrderRepositoryTest.class
+jsug\domain\service\userdetails\ShopUserDetailsServiceTest.class
+jsug\domain\model\CartTest.class
+jsug\domain\repository\category\CategoryRepositoryTest.class
+jsug\domain\TestConfig.class
+jsug\domain\repository\account\AccountRepositoryTest.class
+jsug\domain\service\account\AccountServiceTest.class
+jsug\domain\service\goods\GoodsServiceTest.class
+jsug\domain\service\order\OrderServiceTest.class
