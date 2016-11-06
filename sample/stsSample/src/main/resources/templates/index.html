@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>OMSBeta</title>
+</head>
+<body>
+<!-- アクセスした日時とサーバー情報を表示するThymeleafサンプルhtml. -->
+  <p>Hello, m2o-Core-Sample.</p>
+  <p>Now: <span th:text="${now}"> </span></p>
+  <p>HostName: <span th:text="${severInfo.get('hostname' )}"> </span></p>
+  <p>HostAdress: <span th:text="${severInfo.get('hostadress' )}"> </span></p>
+</body>
+</html>

@@ -1,0 +1,70 @@
+/*拡張テキストのフォーマット*/
+p {
+  color: #0066ff;
+  font-size: 18pt;
+  font-weight: bold;
+  font-style: oblique;
+             /* 讓ｪ縺壹ｌ 荳九★繧� 縺ｼ縺九＠ 濶ｲ */
+  text-shadow: 1px 1px 3px #333;
+  background-color: #f7f7f7;
+  border-radius: 2px;
+  box-shadow: 1px 2px 2px rgba(0, 0, 0, 1);
+  margin: 0px 0px 8px 0px;
+             /* 荳� 蜿ｳ 荳� 蟾ｦ */
+  padding: 24px 12px 4px 24px;
+}
+
+/*拡張テーブルのフォーマット（見出し縦方向）*/
+.tbl_01{
+border-collapse: separate;
+border-spacing: 0px;
+border-top: 1px solid #ccc;
+border-left: 1px solid #ccc;
+}
+.tbl_01 th{
+font-size: 10pt;
+padding:4px;
+text-align: left;
+vertical-align: top;
+color: #444;
+background-color: #feedf3;
+border-left: 3px double #999;
+border-top: 1px solid #fff;
+border-right: 1px solid #ccc;
+border-bottom: 1px solid #ccc;
+}
+.tbl_01 td{
+font-size: 10pt;
+padding:4px;
+background-color: #fafafa;
+border-right: 1px solid #ccc;
+border-bottom: 1px solid #ccc;
+}
+
+/*拡張テーブルのフォーマット（見出し横方向）*/
+.tbl_02{
+border-collapse: separate;
+border-spacing: 0px;
+border-top: 1px solid #ccc;
+border-left: 1px solid #ccc;
+}
+.tbl_02 th{
+font-size: 10pt;
+padding: 4px;
+text-align: left;
+vertical-align: top;
+color: #444;
+background-color: #66ccff;
+border-top: 1px solid #fff;
+border-left: 1px solid #fff;
+border-right: 1px solid #ccc;
+border-bottom: 1px solid #ccc;
+}
+.tbl_02 td{
+font-size: 10pt;
+padding: 4px;
+background-color: #ccffff;
+border-right: 1px solid #ccc;
+border-bottom: 1px solid #ccc;
+}
+

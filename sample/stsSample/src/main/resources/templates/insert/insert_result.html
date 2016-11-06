@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<!-- CSS -->
+<link href="/css/common.css" th:href="@{/css/common.css}" rel="stylesheet" />
+<title>OMSBeta</title>
+</head>
+<body>
+  <!-- JavaScript -->
+  <script type="text/javascript" src="/js/common.js" th:src="@{/js/common.js}"></script>
+
+  <!-- DB登録結果を表示するThymeleafサンプルhtml. -->
+  <p>DB登録結果画面のサンプル</p>
+
+  <form method="post" th:action="@{/insert/execute_back}">
+    <table class="tbl_02">
+      <tr>
+        <th>STAFF_NO</th>
+        <th>OFFICE_CD</th>
+        <th>STAFF_NAME</th>
+        <th>WORK_TIME</th>
+        <th>CREATE_DATE</th>
+      </tr>
+      <tr th:each="result : ${results}">
+        <td th:text="${result.staff_no}"></td>
+        <td th:text="${result.office_cd}"></td>
+        <td th:text="${result.staff_name}"></td>
+        <td th:text="${result.work_time}"></td>
+        <td th:text="${result.create_date}"></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td><input type="submit" value="戻る"  onclick="return back_confirm();" /></td>
+      </tr>
+    </table>
+  </form>
+
+</body>
+</html>

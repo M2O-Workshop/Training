@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<!-- warのデプロイ確認用html. -->
+<!-- デプロイ後にhttp://localhost/アプリ名/sample.htmlで当ページが表示されれば、デプロイは完了している -->
+  <span th:text="${hello}">この部分が動的に置き換えられます</span>
+
+<!-- なお、thymeleafは\src\main\resources\templates配下のhtmlを参照する。 -->
+<!-- サーバー上にwebアプリをデプロイした場合、内部的にjavaのエラーでも404エラーになることがある。 -->
+<!-- 404エラー時に当htmlへのアクセスを試行することで、デプロイまでの成否を確認できる。 -->
+
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<!-- CSS -->
+<link href="/css/common.css" th:href="@{/css/common.css}"
+  rel="stylesheet" />
+
+<title>OMSBeta</title>
+</head>
+<body>
+  <!-- JavaScript -->
+  <script type="text/javascript" src="/js/common.js"
+    th:src="@{/js/common.js}"></script>
+
+  <!-- DB登録を行うThymeleafサンプルhtml. -->
+  <p>DB登録画面のサンプル</p>
+
+  <form method="post" th:action="@{/insert/insert_record}">
+    <table class="tbl_01">
+      <tr>
+        <th>STAFF_NO<br />必須入力 半角1桁～半角11桁
+        </th>
+        <td><input type="text" name="staff_no" maxlength="11" value="" /></td>
+      </tr>
+      <tr>
+        <th>OFFICE_CD<br />必須入力 半角1桁～半角3桁
+        </th>
+        <td><input type="text" name="office_cd" maxlength="3" value="" /></td>
+      </tr>
+      <tr>
+        <th>STAFF_NAME<br />必須入力 半角1桁～半角50桁
+        </th>
+        <td><input type="text" name="staff_name" maxlength="50"
+          value="" /></td>
+      </tr>
+      <tr>
+        <th>WORK_TIME<br />任意入力 整数5桁＋小数2桁
+        </th>
+        <td><input type="text" name="work_time" maxlength="10" value="" /></td>
+      </tr>
+      <tr>
+        <th>CREATE_DATE<br />任意入力 日付値
+        </th>
+        <td><input type="text" name="create_date" maxlength="10"
+          value="" /></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td><input type="submit" value="登録"
+          onclick="return insert_confirm();" /></td>
+      </tr>
+    </table>
+  </form>
+
+</body>
+</html>

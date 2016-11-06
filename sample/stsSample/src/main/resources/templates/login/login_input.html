@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<!-- CSS -->
+<link href="/css/common.css" th:href="@{/css/common.css}" rel="stylesheet"/>
+<title>OMSBeta</title>
+</head>
+<body>
+<!-- JavaScript -->
+  <script type="text/javascript" src="/js/common.js" th:src="@{/js/common.js}"></script>
+
+<!-- ログインを行うThymeleafサンプルhtml. -->
+  <p class="msg" th:text="${#calendars.format(#calendars.createNow(),'yyyy年MM月dd日 HH時mm分ss秒')}" />
+
+<form method="post" th:action="@{/login/execute_login}">
+<table class="tbl_01">
+  <tr>
+    <th>ユーザー名</th>
+    <td><input type="text" name="user_id" maxlength="20" value=""/></td>
+  </tr>
+  <tr>
+    <th>パスワード</th>
+    <td><input type="password" name="pass_word" maxlength="20" value=""/></td>
+  </tr>
+  <tr>
+    <td><input type="submit" value="ログイン" /></td>
+<!-- <td><input type="submit" value="キャンセル" th:onclick="'alert(\'a\');'" /></td>  </tr> -->
+    <td><input type="submit" value="キャンセル" onclick="return exit_confirm();" /></td>  </tr>
+</table>
+</form>
+
+  <br/>※試験運用中。未入力でも次画面に遷移します。
+
+</body>
+</html>
