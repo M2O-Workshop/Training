@@ -1,3 +1,12 @@
+/*
+----------------------------------------------------------------
+サンプルアプリ用スタイルシート
+  更新履歴
+  2016/11/01 yamamoto-t：新規作成(SpringBoot hands on)
+  2016/11/12 yamamoto-t：alert alert-timeを追加
+----------------------------------------------------------------
+*/
+
 html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
@@ -4632,6 +4641,12 @@ a.thumbnail.active {
   background-color: #d9edf7;
   border-color: #bce8f1;
   color: #31708f;
+}
+.alert-time {
+  background-color: #d9edf7;
+  border-color: #bce8f1;
+  color: #31708f;
+  font-size: 20px;
 }
 .alert-info hr {
   border-top-color: #a6e1ec;
