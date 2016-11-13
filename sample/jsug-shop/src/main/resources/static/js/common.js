@@ -36,15 +36,15 @@ function showClock() {
   var nowMonth = set2fig(nowTime.getMonth() + 1);
   var nowDay = set2fig(nowTime.getDate());
   var nowWeek = nowTime.getDay();
-  var weekArray = new Array("日", "月", "火", "水", "木", "金", "土");
+  var weekArray = new Array("Sun", "Mon", "Tue", "Wed", "The", "Fri", "Thr");
 
   var nowHour = set2fig(nowTime.getHours());
   var nowMin = set2fig(nowTime.getMinutes());
   var nowSec = set2fig(nowTime.getSeconds());
 
-  var msg = "本日日付は " + nowYear + "年" + nowMonth + "月" + nowDay + "日（"
+  var msg = "Today is " + nowYear + "/" + nowMonth + "/" + nowDay + "（"
       + weekArray[nowWeek] + "）　";
-  var msg = msg + "現在時刻は " + nowHour + ":" + nowMin + ":" + nowSec + " です。";
+  var msg = msg + "Now is " + nowHour + ":" + nowMin + ":" + nowSec + " .";
 
   // HTML埋め込み用にIDを定義
   document.getElementById("ClockArea").innerHTML = msg;

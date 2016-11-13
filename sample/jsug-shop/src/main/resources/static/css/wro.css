@@ -8,26 +8,29 @@
 ----------------------------------------------------------------
 */
 
+/* html:文書のルート要素 */
 html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
 }
+/* body:文書の本体 */
 body {
   margin: 0;
 }
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-main,
-nav,
-section,
-summary {
+
+article, /* article:記事等、単独で完結する要素 */
+aside,   /* aside:余談・補足情報のセクション */
+details, /* details:追加で得ることのできる備考や操作手段などの詳細情報 */
+figcaption, /* figcaption:図表のキャプション */
+figure,     /* figure:文書の本文から参照される図表、イメージ */
+footer,     /* footer:記事セクションのフッタ、あるいは文書全体のフッタ */
+header,     /* header:記事セクションのヘッダ、あるいは文書全体のヘッダ */
+hgroup,     /* hgroup:h1-h6を束ねる */
+main,       /* main:body要素のメイン・コンテンツを表す */
+nav,        /* nav:ウェブサイト内の他のページへのリンクや、ページ内リンクといったナビゲーションを表す */
+section,    /* section:汎用セクションを表す */
+summary {   /* summary:detailsの要約、キャプションを表す */
   display: block;
 }
 audio,
@@ -895,6 +898,9 @@ body {
   line-height: 1.428571429;
   color: #f1f1f1;
   background-color: #f1f1f1;
+  /*背景画像を指定 :noneで無し*/
+  background-image: url("../images/199585462_95b971c927_b.jpg");
+  background-size:cover; /* auto,contain,cover,%,px */
 }
 input,
 button,
@@ -4644,8 +4650,9 @@ a.thumbnail.active {
   color: #31708f;
 }
 .alert-time {
-  background-color: #d9edf7;
-  border-color: #bce8f1;
+  /*background-color: #d9edf7;*/
+  background-color: rgba(255,255,255,0.1);
+  /*border-color: #bce8f1;*/
   color: #31708f;
   font-size: 26px;
   /*font-family: 'HuiFont29';*/
@@ -6261,6 +6268,7 @@ h3 {
   margin-bottom: 10px;
   font-weight: 700;
 }
+/* strong:強い強調 */
 strong {
   font-weight: 700;
   font-family: "montserratregular", sans-serif;

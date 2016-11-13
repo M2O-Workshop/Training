@@ -1,3 +1,12 @@
+/*
+----------------------------------------------------------------
+サンプルアプリ用スタイルシート
+  更新履歴
+  2016/11/01 yamamoto-t：新規作成(SpringBoot hands on)
+  2016/11/12 yamamoto-t：alert alert-timeを追加
+----------------------------------------------------------------
+*/
+
 html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
@@ -4633,6 +4642,45 @@ a.thumbnail.active {
   border-color: #bce8f1;
   color: #31708f;
 }
+.alert-time {
+  background-color: #d9edf7;
+  border-color: #bce8f1;
+  color: #31708f;
+  font-size: 26px;
+  font-family: 'HuiFont29';
+}
+/*
+@font-faceでwebフォントを定義
+(使用方法について)
+  - 環境次第でHTML単独起動では反映されず、サーバー上での起動が必要な点に注意
+  - また、フォントファイル名称は半角英数字とすること
+  - ブラウザの種別、バージョン次第で対応している形式が決まるが、
+    メジャーなブラウザの最新版は対応している形式も多い
+  - いずれとも読み込みに失敗した場合は、ブラウザのデフォルトフォントで表示される
+  - フォントファイル次第で用意されている文字数が異なる
+(ファイル形式について)
+  - EOT（IE 6-8のみ）
+  - TTF（Windows、MacOSともに全般的に使用可能なものが多い）
+  - OPF（同上）
+  - WOFF（IE 9-、Android 4.4-）
+  - WOFF2（Firefox、Chrome、Opera、Android 5- のみ対応）
+*/
+@font-face {
+  font-family: 'HuiFont29';
+  src: url('../fonts/HuiFont29.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'HuiFontP29';
+  src: url('../fonts/HuiFontP29.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'montserrat';
+  src: url('../fonts/montserrat-webfont.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'varela_round';
+  src: url('../fonts/varela_round-webfont.ttf') format('truetype');
+}
 .alert-info hr {
   border-top-color: #a6e1ec;
 }
@@ -6175,6 +6223,16 @@ button.close {
   src: url('../fonts/montserrat-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/montserrat-webfont.woff') format('woff'), url('../fonts/montserrat-webfont.ttf') format('truetype'), url('../fonts/montserrat-webfont.svg#montserratregular') format('svg');
   font-weight: normal;
   font-style: normal;
+}
+@font-face {
+  font-family: "myFont";
+  src: url("../fonts/ラノベPOP.eot?")  format('eot'),
+       url("ラノベPOP.otf") format('opentype'),
+       url("ラノベPOP.woff2") format('woff2'),
+       url("ラノベPOP.woff")  format('woff');
+}
+.myFontClass {
+  font-family: "myFont";
 }
 body,
 h1,
