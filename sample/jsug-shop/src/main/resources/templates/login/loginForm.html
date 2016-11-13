@@ -5,7 +5,10 @@
     <title>ログイン</title>
     <link rel="stylesheet" type="text/css" th:href="@{/css/wro.css}" href="../../static/css/wro.css"/>
 </head>
-<body>
+<body onLoad="setTimer()">
+
+    <!-- JavaScript -->
+    <script type="text/javascript" src="../../static/js/common.js" th:src="@{/js/common.js}"></script>
 
 <nav class="navbar navbar-default" role="navigation">
     <div class="container">
@@ -24,8 +27,8 @@
 <br/>
 
 <div class="container">
+    <div class="alert alert-time" id="ClockArea"></div>
     <h2>ログインフォーム</h2>
-
     <div th:if="${param.error}" class="alert alert-danger">
         ユーザー名またはパスワードが正しくありません。
     </div>
