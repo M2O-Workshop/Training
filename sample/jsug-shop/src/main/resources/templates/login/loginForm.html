@@ -8,6 +8,10 @@
 <body onLoad="setTimer()">
 
     <!-- JavaScript -->
+    <script type="text/javascript" th:src="@{/js/jquery-3.1.1.min.js}" src="../static/js/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" th:src="@{/js/jquery.particleground.min.js}" src="../../static/js/jquery.particleground.min.js"></script>
+    <script type="text/javascript" th:src="@{/js/app.js}" src="../../static/js/app.js"></script>
+
     <script type="text/javascript" src="../../static/js/common.js" th:src="@{/js/common.js}"></script>
 
 <nav class="navbar navbar-default" role="navigation">
@@ -25,7 +29,7 @@
     </div>
 </nav>
 <br/>
-
+<div id="particles"></div>
 <div class="container">
     <div class="alert alert-time" id="ClockArea"></div>
     <h2>Login Form</h2>
