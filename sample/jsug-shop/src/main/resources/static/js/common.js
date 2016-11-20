@@ -3,6 +3,7 @@
 サンプルアプリ用JavaScript
   更新履歴
   2016/11/12 yamamoto-t：新規作成
+  2016/11/20 yamamoto-t：particlegroundの動作設定を追加
 ----------------------------------------------------------------
  */
 
@@ -36,15 +37,15 @@ function showClock() {
   var nowMonth = set2fig(nowTime.getMonth() + 1);
   var nowDay = set2fig(nowTime.getDate());
   var nowWeek = nowTime.getDay();
-  var weekArray = new Array("日", "月", "火", "水", "木", "金", "土");
+  var weekArray = new Array("Sun", "Mon", "Tue", "Wed", "The", "Fri", "Thr");
 
   var nowHour = set2fig(nowTime.getHours());
   var nowMin = set2fig(nowTime.getMinutes());
   var nowSec = set2fig(nowTime.getSeconds());
 
-  var msg = "本日日付は " + nowYear + "年" + nowMonth + "月" + nowDay + "日（"
-      + weekArray[nowWeek] + "）　";
-  var msg = msg + "現在時刻は " + nowHour + ":" + nowMin + ":" + nowSec + " です。";
+  var msg = nowYear + "/" + nowMonth + "/" + nowDay + "（"
+      + weekArray[nowWeek] + "）";
+  var msg = msg + " " + nowHour + ":" + nowMin + ":" + nowSec + " .";
 
   // HTML埋め込み用にIDを定義
   document.getElementById("ClockArea").innerHTML = msg;
@@ -61,3 +62,33 @@ function setTimer() {
 function test() {
   alert("testです。");
 }
+
+// 画面ロード時の処理
+$(document).ready(function() {
+
+  //particlegroundの動作設定
+  $('.pt').particleground({
+    // ドットとラインの色を指定
+    dotColor : '#ffffff',
+    lineColor : '#5cbdaa',
+    // ドット同士が、どのくらい近づいたら線で結ぶかをpx数で指定
+    proximity : '0',
+    // ドットの密度を指定。数値が少ないほど、密度が濃くなるが重くなる
+    density : '3000',
+    // X軸（横）のドットが流れていく方向の指定。"center"、"left"、"right"から選択
+    directionX : "center",
+    // Y軸（縦）のドットが流れていく方向の指定。"center"、"up"、"down"から選択
+    directionY : "down",
+    // パララックスによる動きの大きさを指定。数値が少ないほど、視差効果が大きくなる
+    parallaxMultiplier : '4',
+    // 縦横の動作を指定
+    maxSpeedX : 0.1,
+    minSpeedX : 0.0,
+    maxSpeedY : 1.5,
+    minSpeedY : 0.8,
+    // ドットの大きさ
+    particleRadius : '15'
+  });
+
+});
+

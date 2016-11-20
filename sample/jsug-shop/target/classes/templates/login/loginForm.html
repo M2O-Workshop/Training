@@ -2,10 +2,13 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8"/>
-    <title>ログイン</title>
+    <title>LOGIN</title>
     <link rel="stylesheet" type="text/css" th:href="@{/css/wro.css}" href="../../static/css/wro.css"/>
 </head>
-<body>
+<body onLoad="setTimer()">
+
+    <!-- JavaScript -->
+    <script type="text/javascript" src="../../static/js/common.js" th:src="@{/js/common.js}"></script>
 
 <nav class="navbar navbar-default" role="navigation">
     <div class="container">
@@ -15,7 +18,7 @@
         <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav navbar-right">
                 <li>
-                    <a th:href="@{/}" href="../goods/showGoods.html">ホーム</a>
+                    <a th:href="@{/}" href="../goods/showGoods.html">HOME</a>
                 </li>
             </ul>
         </div>
@@ -24,8 +27,8 @@
 <br/>
 
 <div class="container">
-    <h2>ログインフォーム</h2>
-
+    <div class="alert alert-time" id="ClockArea"></div>
+    <h2>Login Form</h2>
     <div th:if="${param.error}" class="alert alert-danger">
         ユーザー名またはパスワードが正しくありません。
     </div>
@@ -33,10 +36,10 @@
         <input type="text" name="username" class="form-control" placeholder="E-mail" required="required"
                autofocus="autofocus"/>
         <input type="password" name="password" class="form-control" placeholder="パスワード" required="required"/>
-        <button type="submit" class="btn btn-default">ログイン</button>
+        <button type="submit" class="btn btn-default">Login</button>
     </form>
     <p>
-        アカウントをお持ちでない場合は<a th:href="@{/account/create(form)}" href="../account/createForm.html">こちら</a>から作成してください。
+        If you have no account, please make from <a th:href="@{/account/create(form)}" href="../account/createForm.html">here</a>
     </p>
 </div>
 </body>
