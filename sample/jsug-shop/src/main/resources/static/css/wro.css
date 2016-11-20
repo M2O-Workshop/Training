@@ -6450,6 +6450,7 @@ table td.action-column {
   color: #f1f1f1;
 }
 
+/* 日付表示エリアのレイアウト設定 */
 .alert-time {
   /*background-color: #d9edf7;*/
   background-color: rgba(204,204,255,0.1);
