@@ -5,6 +5,7 @@
   2016/11/01 yamamoto-t：新規作成(SpringBoot hands on)
   2016/11/12 yamamoto-t：alert alert-timeを追加
   2016/11/13 yamamoto-t：webフォント定義を追加し、設定
+  2016/11/20 yamamoto-t：particlegroundの表示設定を追加
 ----------------------------------------------------------------
 */
 
@@ -40,6 +41,7 @@ video {
   display: inline-block;
   vertical-align: baseline;
 }
+
 audio:not([controls]) {
   display: none;
   height: 0;
@@ -899,7 +901,7 @@ body {
   color: #f1f1f1;
   background-color: #f1f1f1;
   /*背景画像を指定 :noneで無し*/
-  background-image: url("../images/199585462_95b971c927_b.jpg");
+  background-image: url("../images/xxx.jpg"); /* xxx.jpgでファイル名を指定する */
   background-size:cover; /* auto,contain,cover,%,px */
 }
 input,
@@ -4649,14 +4651,6 @@ a.thumbnail.active {
   border-color: #bce8f1;
   color: #31708f;
 }
-.alert-time {
-  /*background-color: #d9edf7;*/
-  background-color: rgba(255,255,255,0.1);
-  /*border-color: #bce8f1;*/
-  color: #31708f;
-  font-size: 26px;
-  /*font-family: 'HuiFont29';*/
-}
 .alert-info hr {
   border-top-color: #a6e1ec;
 }
@@ -6455,6 +6449,45 @@ table td.action-column {
 .help-block {
   color: #f1f1f1;
 }
-. particleground {
-  background: #16a085;
+
+.alert-time {
+  /*background-color: #d9edf7;*/
+  background-color: rgba(204,204,255,0.1);
+  /*border-color: #bce8f1;*/
+  color: #ffffff;
+  font-size: 24px;
+  font-weight: bold;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  /*font-family: 'HuiFont29';*/
+}
+
+/* Canvasの下地のレイアウト設定 */
+.pt {
+  position: fixed;
+  z-index: -100;
+  left: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  background-image: url("../images/clouds-seamless-background-824.jpg");
+  /*background-color: rgba(0,0,255,0.1);*/
+  background-size: cover;
+}
+
+/* particlegroundが作成するCanvasのレイアウト設定 */
+canvas.pg-canvas {
+  position: fixed;
+  z-index: -50;
+  left: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  background-color: rgba(255,255,255,0.4); /*薄膜*/
+  background-size: cover;
 }
