@@ -16,26 +16,28 @@ import model.ExecuteLogic;
 import util.EntityManager;
 
 /**
- * @author Yamamoto Takashi <br />
- *  メインサーブレットクラス <br />
- *  メインとなるコントローラークラス <br />
- *  更新履歴 2016/12/11 Yamamoto Takashi：新規作成 <br />
+ * @author Yamamoto Takashi <br>
+ *  <br>
+ *  メインサーブレットクラス <br>
+ *  メインとなるコントローラークラス <br>
+ *  <br>
+ *  更新履歴 2016/12/11 Yamamoto Takashi：新規作成 <br>
  */
 @WebServlet(name = "/MainServlet", urlPatterns = { "/view/MainServlet"})
 public class MainServlet extends HttpServlet {
   private static final long serialVersionUID = 1L;
 
   /**
-   * デフォルトコンストラクタ <br />
+   * デフォルトコンストラクタ
    */
   public MainServlet() {
     super();
   }
 
   /**
-   * doGetメソッド <br />
-   * GETリクエストに対し実行される処理 <br />
-   * 
+   * doGetメソッド <br>
+   * GETリクエストに対し実行される処理 <br>
+   * <br>
    * @param request HTTPリクエスト
    * @param response HTTPレスポンス
    * @throws ServletException サーブレット例外
@@ -59,9 +61,9 @@ public class MainServlet extends HttpServlet {
   }
 
   /**
-   * doPostメソッド <br />
-   * POSTリクエストに対し実行される処理 <br />
-   * 
+   * doPostメソッド <br>
+   * POSTリクエストに対し実行される処理 <br>
+   * <br>
    * @param request HTTPリクエスト
    * @param response HTTPレスポンス
    * @throws ServletException サーブレット例外

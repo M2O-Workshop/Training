@@ -2,11 +2,13 @@
 package entity;
 
 /**
- * @author Yamamoto Takashi <br />
- *  申込エンティティクラス <br />
- *  申込および処理結果に関する情報を格納する <br />
- *  なお、業務プログラムでは入力と出力のエンティティは明示的に分けた方が良い <br />
- *  更新履歴 2016/12/11 Yamamoto Takashi：新規作成 <br />
+ * @author Yamamoto Takashi <br>
+ *  <br>
+ *  申込エンティティクラス <br>
+ *  申込および処理結果に関する情報を格納する <br>
+ *  なお、業務プログラムでは入力と出力のエンティティは明示的に分けた方が良い <br>
+ *  <br>
+ *  更新履歴 2016/12/11 Yamamoto Takashi：新規作成 <br>
  */
 public class ProposalEntity {
 
@@ -23,14 +25,14 @@ public class ProposalEntity {
   private String resultStr = "";
 
   /**
-   * デフォルトコンストラクタ <br />
+   * デフォルトコンストラクタ <br>
    */
   public ProposalEntity() {
     super();
   }
 
   /**
-   * 年齢取得メソッド <br />
+   * 年齢取得メソッド <br>
    * @return age 年齢
    */
   public int getAge() {
@@ -38,7 +40,7 @@ public class ProposalEntity {
   }
 
   /**
-   * 年齢設定メソッド <br />
+   * 年齢設定メソッド <br>
    * @param age 年齢
    */
   public void setAge( int age ) {
@@ -46,7 +48,7 @@ public class ProposalEntity {
   }
 
   /**
-   * 性別取得メソッド <br />
+   * 性別取得メソッド <br>
    * @return gender 性別
    */
   public String getGender() {
@@ -54,7 +56,7 @@ public class ProposalEntity {
   }
 
   /**
-   * 性別設定メソッド <br />
+   * 性別設定メソッド <br>
    * @param gender 性別
    */
   public void setGender( String gender ) {
@@ -62,7 +64,7 @@ public class ProposalEntity {
   }
 
   /**
-   * 保険商品取得メソッド <br />
+   * 保険商品取得メソッド <br>
    * @return product 保険商品
    */
   public String getProduct() {
@@ -70,7 +72,7 @@ public class ProposalEntity {
   }
 
   /**
-   * 保険商品設定メソッド <br />
+   * 保険商品設定メソッド <br>
    * @param product 保険商品
    */
   public void setProduct( String product ) {
@@ -78,7 +80,7 @@ public class ProposalEntity {
   }
 
   /**
-   * 査定結果取得メソッド <br />
+   * 査定結果取得メソッド <br>
    * @return result 査定結果
    */
   public boolean isResult() {
@@ -86,7 +88,7 @@ public class ProposalEntity {
   }
 
   /**
-   * 査定結果設定メソッド <br />
+   * 査定結果設定メソッド <br>
    * @param result 査定結果
    */
   public void setResult( boolean result ) {
@@ -94,7 +96,7 @@ public class ProposalEntity {
   }
 
   /**
-   * 査定結果文字列取得メソッド <br />
+   * 査定結果文字列取得メソッド <br>
    * @return result 査定結果文字列
    */
   public String getResultStr() {
@@ -102,7 +104,7 @@ public class ProposalEntity {
   }
 
   /**
-   * 査定結果文字列設定メソッド <br />
+   * 査定結果文字列設定メソッド <br>
    * @param resultStr 査定結果文字列
    */
   public void setResultStr( String resultStr ) {

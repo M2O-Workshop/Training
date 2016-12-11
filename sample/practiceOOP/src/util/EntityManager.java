@@ -9,24 +9,26 @@ import constant.UnderWriteConst;
 import entity.ProposalEntity;
 
 /**
- * @author Yamamoto Takashi <br />
- *  エンティティ管理クラス <br />
- *  エンティティに対する汎用的な処理を定義 <br />
- *  更新履歴 2016/12/11 Yamamoto Takashi：新規作成 <br />
+ * @author Yamamoto Takashi <br>
+ *  <br>
+ *  エンティティ管理クラス <br>
+ *  エンティティに対する汎用的な処理を定義 <br>
+ *  <br>
+ *  更新履歴 2016/12/11 Yamamoto Takashi：新規作成 <br>
  */
  public final class EntityManager {
 
    /**
-    * デフォルトコンストラクタ <br />
+    * デフォルトコンストラクタ <br>
     */
   private EntityManager() {
     // インスタンスの生成は不可
   }
 
   /**
-   * エンティティ生成メソッド <br />
-   * リクエストから取得した入力情報を元に申込エンティティを生成する <br />
-   * 
+   * エンティティ生成メソッド <br>
+   * リクエストから取得した入力情報を元に申込エンティティを生成する <br>
+   * <br>
    * @param request HTTPリクエスト
    * @return ProposalEntity 申込エンティティ（処理後）
    */
@@ -38,11 +40,11 @@ import entity.ProposalEntity;
     entity.setProduct( request.getParameter( UnderWriteConst.PRAM_PRODUCT ) );
     return entity;
   }
-  
+
   /**
-   * 査定結果文字列設定メソッド <br />
-   * 査定結果のフラグ値を元に、画面に表示する文字列を設定する <br />
-   * 
+   * 査定結果文字列設定メソッド <br>
+   * 査定結果のフラグ値を元に、画面に表示する文字列を設定する <br>
+   * <br>
    * @param entity 申込エンティティ（処理前）
    * @return ProposalEntity 申込エンティティ（処理後）
    */
@@ -54,9 +56,9 @@ import entity.ProposalEntity;
   }
   
   /**
-   * 性別チェックメソッド <br />
-   * エンティティに格納された性別の値を確認する <br />
-   * 
+   * 性別チェックメソッド <br>
+   * エンティティに格納された性別の値を確認する <br>
+   * <br>
    * @param entity 申込エンティティ
    * @param target 一致と見なす性別
    * @return boolean 判定結果（true:一致、false:不一致）
@@ -67,9 +69,9 @@ import entity.ProposalEntity;
   }
 
   /**
-   * 年齢チェックメソッド <br />
-   * エンティティに格納された年齢の値が特定の上限値内か確認する <br />
-   * 
+   * 年齢チェックメソッド <br>
+   * エンティティに格納された年齢の値が特定の上限値内か確認する <br>
+   * <br>
    * @param entity 申込エンティティ
    * @param target 上限値
    * @return boolean 判定結果（true:範囲内、false:範囲外）

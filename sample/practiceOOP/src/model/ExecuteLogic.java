@@ -9,24 +9,26 @@ import entity.ProposalEntity;
 import util.EntityManager;
 
 /**
- * @author Yamamoto Takashi <br />
- *  メインロジッククラス <br />
- *  メイン処理のフローを定義する <br />
- *  更新履歴 2016/12/11 Yamamoto Takashi：新規作成 <br />
+ * @author Yamamoto Takashi <br>
+ *  <br>
+ *  メインロジッククラス <br>
+ *  メイン処理のフローを定義する <br>
+ *  <br>
+ *  更新履歴 2016/12/11 Yamamoto Takashi：新規作成 <br>
  */
 public final class ExecuteLogic {
 
   /**
-   * デフォルトコンストラクタ <br />
+   * デフォルトコンストラクタ <br>
    */
   private ExecuteLogic() {
     // インスタンスの生成は不可
   }
 
   /**
-   * メイン処理実行メソッド <br />
-   * 保険商品別に処理を指定し実行する <br />
-   * 
+   * メイン処理実行メソッド <br>
+   * 保険商品別に処理を指定し実行する <br>
+   * <br>
    * @param entity 申込エンティティ（処理前）
    * @return ProposalEntity 申込エンティティ（処理後）
    */

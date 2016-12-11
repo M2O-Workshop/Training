@@ -4,10 +4,12 @@ package constant;
  */
 
 /**
- * @author Yamamoto Takashi
- * 査定処理定数クラス
- * 査定処理で使用する定数を定義
- * 更新履歴 2016/12/11 Yamamoto Takashi：新規作成
+ * @author Yamamoto Takashi <br>
+ *  <br>
+ *  査定処理定数クラス <br>
+ *  査定処理で使用する定数を定義 <br>
+ *  <br>
+ *  更新履歴 2016/12/11 Yamamoto Takashi：新規作成 <br>
  */
 public class UnderWriteConst {
 
