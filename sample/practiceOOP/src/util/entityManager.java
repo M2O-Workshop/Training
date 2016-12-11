@@ -5,6 +5,7 @@ package util;
 
 import javax.servlet.http.HttpServletRequest;
 
+import constant.UnderWriteConst;
 import entity.ProposalEntity;
 
 /**
@@ -19,8 +20,8 @@ import entity.ProposalEntity;
    * （コンストラクター論理名） <br />
    * （説明） <br />
    */
-  public entityManager() {
-    // TODO 自動生成されたコンストラクター・スタブ
+  private entityManager() {
+    // インスタンスの生成は不可
   }
 
   /**
@@ -32,9 +33,9 @@ import entity.ProposalEntity;
   public static ProposalEntity createEntity( HttpServletRequest request ){
     ProposalEntity entity = new ProposalEntity();
     // リクエストから入力値を取得
-    entity.setAge( Integer.parseInt( request.getParameter( "age" ) ) );
-    entity.setGender( request.getParameter( "gender" ) );
-    entity.setProduct( request.getParameter( "product" ) );
+    entity.setAge( Integer.parseInt( request.getParameter( UnderWriteConst.PRAM_AGE ) ) );
+    entity.setGender( request.getParameter( UnderWriteConst.PRAM_GENDER ) );
+    entity.setProduct( request.getParameter( UnderWriteConst.PRAM_PRODUCT ) );
     return entity;
   }
   
@@ -46,7 +47,7 @@ import entity.ProposalEntity;
    */
   public static ProposalEntity createResultStr( ProposalEntity entity ){
     // 査定結果から文字列を生成
-    String resultStr = entity.isResult() ? "引き受け可能です。" : "契約不可の条件です。";
+    String resultStr = entity.isResult() ? UnderWriteConst.RESLUT_OK : UnderWriteConst.RESLUT_NG;
     entity.setResultStr( resultStr );
     return entity;
   }

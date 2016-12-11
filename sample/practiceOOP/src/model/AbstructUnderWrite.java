@@ -11,8 +11,14 @@ import entity.ProposalEntity;
  *  （説明） <br />
  *  更新履歴 yyyy/mm/dd （更新者）：（説明） <br />
  */
-public interface CommonModel {
+public interface AbstructUnderWrite {
   
+  /**
+   * （メソッド論理名） <br />
+   * （説明） <br />
+   * @param entity
+   * @return
+   */
   public abstract boolean underWriteLogic(ProposalEntity entity);
 
 }

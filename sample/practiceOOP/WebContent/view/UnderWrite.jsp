@@ -1,4 +1,6 @@
-<%-- 査定条件を入力し、結果を表示する画面 --%>
+<!-- 査定条件を入力し、結果を表示する画面 -->
+<%-- UnderWriteConstのstatic importを行う --%>
+<%@page import="static constant.UnderWriteConst.*"%>
 <%@page import="entity.ProposalEntity"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
   pageEncoding="UTF-8"%>
@@ -13,9 +15,9 @@
 <body>
   <%
     // 文字エンコードの指定
-    request.setCharacterEncoding( "UTF-8" );
+    request.setCharacterEncoding( ENCORD_TYPE );
     // リクエストからentityを取得
-    ProposalEntity entity = ( ProposalEntity ) request.getAttribute( "entity" );
+    ProposalEntity entity = ( ProposalEntity ) request.getAttribute( ATTR_ENTITY );
     // entityが空の場合は初期化を行う
     if ( entity == null ) {
       entity = new ProposalEntity();
@@ -38,7 +40,7 @@
           年齢
         </td>
         <td>
-          <input type="text" name="age" value="<%= entity.getAge() %>" maxlength="3">
+          <input type="text" name=<%= PRAM_AGE %> value=<%= entity.getAge() %> maxlength="3">
         </td>
         <td id="ageErrorMsg">
           <%-- 初期状態は何も表示しない --%>
@@ -49,9 +51,9 @@
           性別
         </td>
         <td>
-          <input type="radio" name="gender" value="male" <%= "male".equals(entity.getGender()) ? " checked=\"checked\"" : "" %>>男
-          <input type="radio" name="gender" value="female" <%= "female".equals(entity.getGender()) ? " checked=\"checked\"" : "" %>>女
-          <input type="radio" name="gender" value="corporation" <%= "corporation".equals(entity.getGender()) ? " checked=\"checked\"" : "" %>>法人
+          <input type="radio" name=<%= PRAM_GENDER %> value=<%= GENDER_MALE %> <%= GENDER_MALE.equals(entity.getGender()) ? " checked=\"checked\"" : "" %>>男
+          <input type="radio" name=<%= PRAM_GENDER %> value=<%= GENDER_FEMALE %> <%= GENDER_FEMALE.equals(entity.getGender()) ? " checked=\"checked\"" : "" %>>女
+          <input type="radio" name=<%= PRAM_GENDER %> value=<%= GENDER_CORP %> <%= GENDER_CORP.equals(entity.getGender()) ? " checked=\"checked\"" : "" %>>法人
         </td>
         <td id="genderErrorMsg">
           <%-- 初期状態は何も表示しない --%>
@@ -62,10 +64,10 @@
           保険商品
         </td>
         <td>
-          <select name="product" id="product">
-            <option value="cancer" <%= "cancer".equals(entity.getProduct()) ? " selected=\"selected\"" : "" %>>がん保険</option>
-            <option value="medical" <%= "medical".equals(entity.getProduct()) ? " selected=\"selected\"" : "" %>>医療保険</option>
-            <option value="ordinary" <%= "ordinary".equals(entity.getProduct()) ? " selected=\"selected\"" : "" %>>普通保険</option>
+          <select name=<%= PRAM_PRODUCT %> id="product">
+            <option value=<%= PRODUCT_CANCER %> <%= PRODUCT_CANCER.equals(entity.getProduct()) ? " selected=\"selected\"" : "" %>>がん保険</option>
+            <option value=<%= PRODUCT_MEDICAL %> <%= PRODUCT_MEDICAL.equals(entity.getProduct()) ? " selected=\"selected\"" : "" %>>医療保険</option>
+            <option value=<%= PRODUCT_ORDINARY %> <%= PRODUCT_ORDINARY.equals(entity.getProduct()) ? " selected=\"selected\"" : "" %>>普通保険</option>
           </select>
         </td>
         <td id="productErrorMsg">

@@ -4,6 +4,7 @@
 
 package model;
 
+import constant.UnderWriteConst;
 import entity.ProposalEntity;
 import util.entityManager;
 
@@ -13,14 +14,14 @@ import util.entityManager;
  *         （説明） <br />
  *         更新履歴 yyyy/mm/dd （更新者）：（説明） <br />
  */
-public class ExecuteUnderWrite {
+public class ExecuteLogic {
 
   /**
    * （コンストラクター論理名） <br />
    * （説明） <br />
    */
-  public ExecuteUnderWrite() {
-    // TODO 自動生成されたコンストラクター・スタブ
+  private ExecuteLogic() {
+    // インスタンスの生成は不可
   }
 
   /**
@@ -33,11 +34,11 @@ public class ExecuteUnderWrite {
   public static ProposalEntity exec( ProposalEntity entity ) {
     
     // がん商品の場合
-    if ( "cancer".equals( entity.getProduct() ) ) {
-      // がん商品の査定を実行
+    if ( UnderWriteConst.PRODUCT_CANCER.equals( entity.getProduct() ) ) {
+      // 査定処理を実行
       entity.setResult( new CancerUnderwrite().underWriteLogic( entity ) );
     }
-    // 査定結果を返却する
+    // 処理結果を返却する
     return entityManager.createResultStr( entity );
   }
 
