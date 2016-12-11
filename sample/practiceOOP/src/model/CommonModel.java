@@ -3,7 +3,7 @@
  */
 package model;
 
-import entity.PersonEntity;
+import entity.ProposalEntity;
 
 /**
  * @author （作成者） <br />
@@ -13,6 +13,6 @@ import entity.PersonEntity;
  */
 public interface CommonModel {
   
-  public abstract boolean underWriteLogic(PersonEntity entity);
+  public abstract boolean underWriteLogic(ProposalEntity entity);
 
 }

@@ -3,7 +3,7 @@
  */
 package model;
 
-import entity.PersonEntity;
+import entity.ProposalEntity;
 
 /**
  * @author （作成者） <br />
@@ -13,11 +13,10 @@ import entity.PersonEntity;
  */
 public class CancerUnderwrite implements CommonModel {
 
-
   @Override
-  public boolean underWriteLogic( PersonEntity entity ) {
-    // TODO 自動生成されたメソッド・スタブ
-    return false;
+  public boolean underWriteLogic( ProposalEntity entity ) {
+    // TODO 査定ロジックを実装すること
+    return true;
   }
 
 }
