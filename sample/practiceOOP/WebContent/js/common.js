@@ -1,6 +1,7 @@
 /**
  * 共通JavaScriptファイル
  * クライアントサイドで実行する処理を記述する
+ * 更新履歴 2016/12/11 Yamamoto Takashi：新規作成
  */
 
 /**
@@ -14,7 +15,8 @@ function inputAgeCheck() {
   // 入力チェックの実行
   if ( isNumber(document.inputForm.age.value) == false) {
     //window.alert('年齢には3桁までの半角数値を入力して下さい。');
-    document.getElementById("ageErrorMsg").innerHTML = "年齢には3桁までの半角数値を入力して下さい。";
+    document.getElementById("ageErrorMsg").innerHTML
+      = "年齢には3桁までの半角数値を入力して下さい。";
     return false;
   }
   return true;

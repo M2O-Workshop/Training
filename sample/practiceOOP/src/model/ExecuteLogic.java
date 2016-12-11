@@ -6,40 +6,40 @@ package model;
 
 import constant.UnderWriteConst;
 import entity.ProposalEntity;
-import util.entityManager;
+import util.EntityManager;
 
 /**
- * @author （作成者） <br />
- *         （クラス論理名） <br />
- *         （説明） <br />
- *         更新履歴 yyyy/mm/dd （更新者）：（説明） <br />
+ * @author Yamamoto Takashi <br />
+ *  メインロジッククラス <br />
+ *  メイン処理のフローを定義する <br />
+ *  更新履歴 2016/12/11 Yamamoto Takashi：新規作成 <br />
  */
-public class ExecuteLogic {
+public final class ExecuteLogic {
 
   /**
-   * （コンストラクター論理名） <br />
-   * （説明） <br />
+   * デフォルトコンストラクタ <br />
    */
   private ExecuteLogic() {
     // インスタンスの生成は不可
   }
 
   /**
-   * （メソッド論理名） <br />
-   * （説明） <br />
+   * メイン処理実行メソッド <br />
+   * 保険商品別に処理を指定し実行する <br />
    * 
-   * @param entity
-   * @return
+   * @param entity 申込エンティティ（処理前）
+   * @return ProposalEntity 申込エンティティ（処理後）
    */
   public static ProposalEntity exec( ProposalEntity entity ) {
-    
+
     // がん商品の場合
     if ( UnderWriteConst.PRODUCT_CANCER.equals( entity.getProduct() ) ) {
       // 査定処理を実行
-      entity.setResult( new CancerUnderwrite().underWriteLogic( entity ) );
+      // ラムダ式記法（java.util.functionパッケージのtestメソッドを実装）
+      entity.setResult( CancerUnderwrite.underWriteLogic.test( entity ) );
     }
     // 処理結果を返却する
-    return entityManager.createResultStr( entity );
+    return EntityManager.createResultStr( entity );
   }
 
 }

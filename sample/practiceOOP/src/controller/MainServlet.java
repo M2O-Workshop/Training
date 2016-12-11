@@ -13,32 +13,33 @@ import javax.servlet.http.HttpServletResponse;
 import constant.UnderWriteConst;
 import entity.ProposalEntity;
 import model.ExecuteLogic;
-import util.entityManager;
+import util.EntityManager;
 
 /**
- * @author （作成者） <br />
- *         （クラス論理名） <br />
- *         （説明） <br />
- *         更新履歴 yyyy/mm/dd （更新者）：（説明） <br />
+ * @author Yamamoto Takashi <br />
+ *  メインサーブレットクラス <br />
+ *  メインとなるコントローラークラス <br />
+ *  更新履歴 2016/12/11 Yamamoto Takashi：新規作成 <br />
  */
 @WebServlet(name = "/MainServlet", urlPatterns = { "/view/MainServlet"})
 public class MainServlet extends HttpServlet {
   private static final long serialVersionUID = 1L;
 
   /**
-   * （コンストラクター論理名） <br />
-   * （説明） <br />
+   * デフォルトコンストラクタ <br />
    */
   public MainServlet() {
     super();
   }
 
   /**
-   * （メソッド論理名） <br />
-   * （説明） <br />
+   * doGetメソッド <br />
+   * GETリクエストに対し実行される処理 <br />
    * 
-   * @param entity
-   * @throws 
+   * @param request HTTPリクエスト
+   * @param response HTTPレスポンス
+   * @throws ServletException サーブレット例外
+   * @throws IOException 入出力例外
    */
   protected void doGet( HttpServletRequest request, HttpServletResponse response )
       throws ServletException, IOException {
@@ -46,7 +47,7 @@ public class MainServlet extends HttpServlet {
     response.setContentType( UnderWriteConst.CONTENT_TYPE );
     request.setCharacterEncoding( UnderWriteConst.ENCORD_TYPE );
     // リクエストからentityを生成する
-    ProposalEntity entity = entityManager.createEntity( request );
+    ProposalEntity entity = EntityManager.createEntity( request );
 
     // メイン処理の呼び出し
     entity = ExecuteLogic.exec( entity );
@@ -58,11 +59,13 @@ public class MainServlet extends HttpServlet {
   }
 
   /**
-   * （メソッド論理名） <br />
-   * （説明） <br />
+   * doPostメソッド <br />
+   * POSTリクエストに対し実行される処理 <br />
    * 
-   * @param entity
-   * @throws 
+   * @param request HTTPリクエスト
+   * @param response HTTPレスポンス
+   * @throws ServletException サーブレット例外
+   * @throws IOException 入出力例外
    */
   protected void doPost( HttpServletRequest request, HttpServletResponse response )
       throws ServletException, IOException {

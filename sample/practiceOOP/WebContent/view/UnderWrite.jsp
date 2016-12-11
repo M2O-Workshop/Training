@@ -1,4 +1,5 @@
 <!-- 査定条件を入力し、結果を表示する画面 -->
+<!-- 更新履歴 2016/12/11 Yamamoto Takashi：新規作成 -->
 <%-- UnderWriteConstのstatic importを行う --%>
 <%@page import="static constant.UnderWriteConst.*"%>
 <%@page import="entity.ProposalEntity"%>
