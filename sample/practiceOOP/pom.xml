@@ -14,14 +14,19 @@
 
   <!-- 依存するライブラリの指定 -->
   <dependencies>
+    <!-- jUnitおよびmockitoライブラリの指定 -->
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
       <version>4.12</version>
       <scope>test</scope>
     </dependency>
-
-  <!-- プロジェクトファセットの動的Webモジュールに該当 -->
+    <dependency>
+      <groupId>org.mockito</groupId>
+      <artifactId>mockito-core</artifactId>
+      <version>1.10.19</version>
+    </dependency>
+    <!-- プロジェクトファセットの動的Webモジュールに該当 -->
     <dependency>
       <groupId>javax.servlet</groupId>
       <artifactId>javax.servlet-api</artifactId>
