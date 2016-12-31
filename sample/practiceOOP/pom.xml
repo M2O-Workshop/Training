@@ -30,9 +30,9 @@
     </dependency>
   </dependencies>
   
-  <!-- ビルドオプションの指定 -->
+  <!-- ビルドオプションおよびデプロイオプションの指定 -->
   <build>
-    <sourceDirectory>src</sourceDirectory>
+    <sourceDirectory>src/main/java</sourceDirectory>
     <plugins>
       <plugin>
         <artifactId>maven-compiler-plugin</artifactId>
@@ -46,8 +46,11 @@
         <artifactId>maven-war-plugin</artifactId>
         <version>2.6</version>
         <configuration>
-          <warSourceDirectory>WebContent</warSourceDirectory>
+          <!-- Webリソースディレクトリの指定 -->
+          <warSourceDirectory>src/main/resources/templates</warSourceDirectory>
           <failOnMissingWebXml>false</failOnMissingWebXml>
+          <!-- コンテキストルートの指定 -->
+          <warName>practiceOOP</warName>
         </configuration>
       </plugin>
     </plugins>
