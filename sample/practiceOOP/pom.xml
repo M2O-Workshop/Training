@@ -1,4 +1,5 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <!-- POMのバージョン。固定。 -->
   <modelVersion>4.0.0</modelVersion>
   <groupId>practiceOOP</groupId>
@@ -6,7 +7,7 @@
   <!-- アプリのバージョン。任意。 -->
   <version>1.0.0-SNAPSHOT</version>
   <packaging>war</packaging>
-  
+
   <!-- エンコードの指定 -->
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -34,7 +35,7 @@
       <scope>provided</scope>
     </dependency>
   </dependencies>
-  
+
   <!-- ビルドオプションおよびデプロイオプションの指定 -->
   <build>
     <sourceDirectory>src/main/java</sourceDirectory>
@@ -56,6 +57,20 @@
           <failOnMissingWebXml>false</failOnMissingWebXml>
           <!-- コンテキストルートの指定 -->
           <warName>practiceOOP</warName>
+        </configuration>
+      </plugin>
+      <plugin>
+        <!-- MavenコンソールにおけるjUnit出力全角文字の文字化け回避 -->
+        <!-- skipTests:trueでテストのスキップも可能 -->
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <configuration>
+          <junitArtifactName>junit:junit</junitArtifactName>
+          <encoding>UTF-8</encoding>
+          <inputEncoding>UTF-8</inputEncoding>
+          <outputEncoding>UTF-8</outputEncoding>
+          <argLine>-Dfile.encoding=UTF-8</argLine>
+          <skipTests>false</skipTests>
         </configuration>
       </plugin>
     </plugins>

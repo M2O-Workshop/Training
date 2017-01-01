@@ -4,7 +4,7 @@
 
 package model;
 
-import constant.UnderWriteConst;
+import controller.ModelFactory;
 import entity.ProposalEntity;
 import util.EntityManager;
 
@@ -15,6 +15,7 @@ import util.EntityManager;
  *  メイン処理のフローを定義する <br>
  *  <br>
  *  更新履歴 2016/12/11 Yamamoto Takashi：新規作成 <br>
+ *           2016/12/31 Yamamoto Takashi：ロジックから商品種別での分岐を排除 <br>
  */
 public final class ExecuteLogic {
 
@@ -27,20 +28,25 @@ public final class ExecuteLogic {
 
   /**
    * メイン処理実行メソッド <br>
-   * 保険商品別に処理を指定し実行する <br>
+   * modelインスタンスを動的に生成し、査定処理を実行する <br>
    * <br>
    * @param entity 申込エンティティ（処理前）
    * @return ProposalEntity 申込エンティティ（処理後）
    */
   public static ProposalEntity exec( ProposalEntity entity ) {
 
-    // がん商品の場合
-    if ( UnderWriteConst.PRODUCT_CANCER.equals( entity.getProduct() ) ) {
+    try {
+      // modelを動的に生成
+      AbstractUnderWrite model = ModelFactory.createModel( entity );
       // 査定処理を実行
-      // ラムダ式記法（java.util.functionパッケージのtestメソッドを実装）
-      entity.setResult( CancerUnderwrite.underWriteLogic.test( entity ) );
+      entity = model.underWriteLogic( entity );
+
+    } catch ( ClassNotFoundException | InstantiationException | IllegalAccessException e ) {
+      // 例外発生時はコンソール出力
+      e.printStackTrace();
     }
-    // 処理結果を返却する
+
+    // 処理後のエンティティを返却する
     return EntityManager.createResultStr( entity );
   }
 

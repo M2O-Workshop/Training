@@ -10,6 +10,7 @@ package constant;
  *  査定処理で使用する定数を定義 <br>
  *  <br>
  *  更新履歴 2016/12/11 Yamamoto Takashi：新規作成 <br>
+ *           2016/12/31 Yamamoto Takashi：処理コード値の追加、商品名称の修正 <br>
  */
 public class UnderWriteConst {
 
@@ -37,11 +38,17 @@ public class UnderWriteConst {
   public static final int ORDINARY_CORP_UPPER_AGE = 80;
 
   /** がん保険を表すコード値. */
-  public static final String PRODUCT_CANCER = "cancer";
+  public static final String PRODUCT_CANCER = "Cancer";
   /** 医療保険を表すコード値. */
-  public static final String PRODUCT_MEDICAL = "medical";
+  public static final String PRODUCT_MEDICAL = "Medical";
   /** 普通保険を表すコード値. */
-  public static final String PRODUCT_ORDINARY = "ordinary";
+  public static final String PRODUCT_ORDINARY = "Ordinary";
+
+  /** Modelパッケージを表すコード値. */
+  public static final String PACKAGE_MODEL = "model.";
+
+  /** 査定処理を表すコード値. */
+  public static final String UNDERWRITE_LOGIC = "UnderWrite";
 
   /** 男性を表すコード値. */
   public static final String GENDER_MALE = "male";
