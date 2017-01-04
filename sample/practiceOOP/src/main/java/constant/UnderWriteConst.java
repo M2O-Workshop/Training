@@ -11,6 +11,7 @@ package constant;
  *  <br>
  *  更新履歴 2016/12/11 Yamamoto Takashi：新規作成 <br>
  *           2016/12/31 Yamamoto Takashi：処理コード値の追加、商品名称の修正 <br>
+ *           2017/01/04 Yamamoto Takashi：処理コード値をクラス名を明示する形式に修正 <br>
  */
 public class UnderWriteConst {
 
@@ -44,11 +45,12 @@ public class UnderWriteConst {
   /** 普通保険を表すコード値. */
   public static final String PRODUCT_ORDINARY = "Ordinary";
 
-  /** Modelパッケージを表すコード値. */
-  public static final String PACKAGE_MODEL = "model.";
-
-  /** 査定処理を表すコード値. */
-  public static final String UNDERWRITE_LOGIC = "UnderWrite";
+  /** がん保険査定処理を表すコード値. */
+  public static final String CANCER_UNDERWRITE = "model.CancerUnderWrite";
+  /** 医療保険査定処理を表すコード値. */
+  public static final String MEDICAL_UNDERWRITE = "model.MedicalUnderWrite";
+  /** 普通保険査定処理を表すコード値. */
+  public static final String ORDINARY_UNDERWRITE = "model.OrdinaryUnderWrite";
 
   /** 男性を表すコード値. */
   public static final String GENDER_MALE = "male";

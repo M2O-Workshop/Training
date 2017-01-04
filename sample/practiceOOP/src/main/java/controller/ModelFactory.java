@@ -4,7 +4,6 @@
 
 package controller;
 
-import constant.UnderWriteConst;
 import entity.ProposalEntity;
 import model.AbstractUnderWrite;
 
@@ -15,6 +14,7 @@ import model.AbstractUnderWrite;
  * 選択された商品種別に応じ動的にmodelインスタンスを生成する <br>
  * <br>
  * 更新履歴 2016/12/31 Yamamoto Takashi：新規作成 <br>
+ *          2017/01/04 Yamamoto Takashi：処理コード値をクラス名を明示する形式に修正 <br>
  */
 public class ModelFactory {
 
@@ -28,7 +28,8 @@ public class ModelFactory {
 
   /**
    * model生成メソッド <br>
-   * 商品種別からクラス名を判断し、動的にmodelインスタンスを生成する <br>
+   * エンティティから査定クラス名を取得し、動的にmodelインスタンスを生成する <br>
+   * 
    * @param entity 申込エンティティ
    * @return AbstractUnderWrite 生成したmodelインスタンス
    * @throws ClassNotFoundException 該当するmodelクラスが存在しない場合
@@ -38,14 +39,8 @@ public class ModelFactory {
   public static AbstractUnderWrite createModel( ProposalEntity entity )
       throws ClassNotFoundException, InstantiationException, IllegalAccessException {
 
-    // 選択された商品種類に応じpackage指定込みのmodel名称を生成する
-    StringBuilder modelName = new StringBuilder();
-    modelName.append( UnderWriteConst.PACKAGE_MODEL );
-    modelName.append( entity.getProduct() );
-    modelName.append( UnderWriteConst.UNDERWRITE_LOGIC );
-
     // modelインスタンスを生成し返却する
-    Class<?> cl = Class.forName( modelName.toString() );
+    Class<?> cl = Class.forName( entity.getUnderWrite() );
     return ( AbstractUnderWrite ) cl.newInstance();
   }
 

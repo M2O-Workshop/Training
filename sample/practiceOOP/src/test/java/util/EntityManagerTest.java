@@ -20,11 +20,12 @@ import entity.ProposalEntity;
 
 /**
  * @author Yamamoto Takashi <br>
- *         <br>
- *         EntityManager単体テストクラス <br>
- *         エンティティ管理処理を単独起動してテストを実行する <br>
- *         <br>
- *         更新履歴 2016/12/31 Yamamoto Takashi：新規作成 <br>
+ * <br>
+ * EntityManager単体テストクラス <br>
+ * エンティティ管理処理を単独起動してテストを実行する <br>
+ * <br>
+ * 更新履歴 2016/12/31 Yamamoto Takashi：新規作成 <br>
+ *          2017/01/04 Yamamoto Takashi：査定処理名を要素に追加 <br>
  */
 public class EntityManagerTest {
 
@@ -64,13 +65,14 @@ public class EntityManagerTest {
     // mockのHttpServletRequestにパラメーターをセット
     given( request.getParameter( "age" ) ).willReturn( "0" );
     given( request.getParameter( "gender" ) ).willReturn( "male" );
-    given( request.getParameter( "product" ) ).willReturn( "cancer" );
+    given( request.getParameter( "product" ) ).willReturn( "cancer,model.CancerUnderWrite" );
 
     // 検証用エンティティにパラメーターをセット
     ProposalEntity testEntity = new ProposalEntity();
     testEntity.setAge( 0 );
     testEntity.setGender( "male" );
     testEntity.setProduct( "cancer" );
+    testEntity.setUnderWrite( "model.CancerUnderWrite" );
 
     // #1 検証用エンティティとcreateEntity生成エンティティの一致を比較（年齢）
     assertThat( testEntity.getAge(), is( EntityManager.createEntity( request ).getAge() ) );
@@ -78,6 +80,8 @@ public class EntityManagerTest {
     assertThat( testEntity.getGender(), is( EntityManager.createEntity( request ).getGender() ) );
     // #3 検証用エンティティとcreateEntity生成エンティティの一致を比較（商品）
     assertThat( testEntity.getProduct(), is( EntityManager.createEntity( request ).getProduct() ) );
+    // #4 検証用エンティティとcreateEntity生成エンティティの一致を比較（査定処理名）
+    assertThat( testEntity.getUnderWrite(), is( EntityManager.createEntity( request ).getUnderWrite() ) );
 
   }
 

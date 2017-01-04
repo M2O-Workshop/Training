@@ -9,6 +9,7 @@ package entity;
  *  なお、業務プログラムでは入力と出力のエンティティは明示的に分けた方が良い <br>
  *  <br>
  *  更新履歴 2016/12/11 Yamamoto Takashi：新規作成 <br>
+ *           2017/01/04 Yamamoto Takashi：査定処理名を要素に追加 <br>
  */
 public class ProposalEntity {
 
@@ -19,6 +20,8 @@ public class ProposalEntity {
   private String gender = "male";
   /** 保険商品 */
   private String product = ""; //JSP側で初期値を指定済み
+  /** 査定処理名 */
+  private String underWrite = ""; //JSP側で初期値を指定済み
   /** 査定結果 */
   private boolean result = false;
   /** 査定結果文字列 */
@@ -77,6 +80,22 @@ public class ProposalEntity {
    */
   public void setProduct( String product ) {
     this.product = product;
+  }
+
+  /**
+   * 査定処理名取得メソッド <br>
+   * @return product 保険商品
+   */
+  public String getUnderWrite() {
+    return underWrite;
+  }
+
+  /**
+   * 査定処理名設定メソッド <br>
+   * @param product 保険商品
+   */
+  public void setUnderWrite( String underWrite ) {
+    this.underWrite = underWrite;
   }
 
   /**
