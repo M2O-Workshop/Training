@@ -2,6 +2,7 @@
 <!-- 更新履歴 2016/12/11 Yamamoto Takashi：新規作成 -->
 <!--          2016/12/31 Yamamoto Takashi：PJT構成の変更に伴い、jsのPATHを修正 -->
 <!--          2017/01/04 Yamamoto Takashi：PRAM_PRODUCTのvalueに査定処理名を追加 -->
+<!--          2017/01/05 Yamamoto Takashi：PRAM_PRODUCTのvalueを商品種類のみに再修正 -->
 <%-- UnderWriteConstのstatic importを行う --%>
 <%@page import="static constant.UnderWriteConst.*"%>
 <%@page import="entity.ProposalEntity"%>
@@ -69,9 +70,9 @@
         </td>
         <td>
           <select name=<%= PRAM_PRODUCT %> id="product">
-            <option value="<%= PRODUCT_CANCER %>,<%= CANCER_UNDERWRITE %>" <%= PRODUCT_CANCER.equals(entity.getProduct()) ? " selected=\"selected\"" : "" %>>がん保険</option>
-            <option value="<%= PRODUCT_MEDICAL %>,<%= MEDICAL_UNDERWRITE %>" <%= PRODUCT_MEDICAL.equals(entity.getProduct()) ? " selected=\"selected\"" : "" %>>医療保険</option>
-            <option value="<%= PRODUCT_ORDINARY %>,<%= ORDINARY_UNDERWRITE %>" <%= PRODUCT_ORDINARY.equals(entity.getProduct()) ? " selected=\"selected\"" : "" %>>普通保険</option>
+            <option value=<%= PRODUCT_CANCER %> <%= PRODUCT_CANCER.equals(entity.getProduct()) ? " selected=\"selected\"" : "" %>>がん保険</option>
+            <option value=<%= PRODUCT_MEDICAL %> <%= PRODUCT_MEDICAL.equals(entity.getProduct()) ? " selected=\"selected\"" : "" %>>医療保険</option>
+            <option value=<%= PRODUCT_ORDINARY %> <%= PRODUCT_ORDINARY.equals(entity.getProduct()) ? " selected=\"selected\"" : "" %>>普通保険</option>
           </select>
         </td>
         <td id="productErrorMsg">

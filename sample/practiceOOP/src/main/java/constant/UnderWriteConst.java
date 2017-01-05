@@ -1,21 +1,27 @@
+
 package constant;
+
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * Copyright 2016 EIS Co., Ltd. All rights reserved.
  */
 
 /**
  * @author Yamamoto Takashi <br>
- *  <br>
- *  査定処理定数クラス <br>
- *  査定処理で使用する定数を定義 <br>
- *  <br>
- *  更新履歴 2016/12/11 Yamamoto Takashi：新規作成 <br>
- *           2016/12/31 Yamamoto Takashi：処理コード値の追加、商品名称の修正 <br>
- *           2017/01/04 Yamamoto Takashi：処理コード値をクラス名を明示する形式に修正 <br>
+ * <br>
+ * 査定処理定数クラス <br>
+ * 査定処理で使用する定数を定義 <br>
+ * <br>
+ * 更新履歴 2016/12/11 Yamamoto Takashi：新規作成 <br>
+ * 2016/12/31 Yamamoto Takashi：処理コード値の追加、商品名称の修正 <br>
+ * 2017/01/04 Yamamoto Takashi：処理コード値をクラス名を明示する形式に修正 <br>
+ * 2017/01/05 Yamamoto Takashi：保険商品と査定処理のマッピング情報を追加 <br>
  */
 public class UnderWriteConst {
 
-  //本来はマスタテーブルもしくはプロパティに保持すべき情報だがロジック簡略化のため定数保持
+  // 本来はマスタテーブルもしくはプロパティに保持すべき情報だがロジック簡略化のため定数保持
 
   /** がん保険かつ男性の場合の上限年齢. */
   public static final int CANCE_MALE_UPPER_AGE = 50;
@@ -51,6 +57,15 @@ public class UnderWriteConst {
   public static final String MEDICAL_UNDERWRITE = "model.MedicalUnderWrite";
   /** 普通保険査定処理を表すコード値. */
   public static final String ORDINARY_UNDERWRITE = "model.OrdinaryUnderWrite";
+
+  /** 保険商品と査定処理のマッピング情報. */
+  public static final Map<String, String> PRODUCT_UW_MAP = new HashMap<String, String>() {
+    {
+      put( PRODUCT_CANCER, CANCER_UNDERWRITE );
+      put( PRODUCT_MEDICAL, MEDICAL_UNDERWRITE );
+      put( PRODUCT_ORDINARY, ORDINARY_UNDERWRITE );
+    }
+  };
 
   /** 男性を表すコード値. */
   public static final String GENDER_MALE = "male";

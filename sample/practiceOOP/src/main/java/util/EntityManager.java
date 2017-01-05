@@ -17,6 +17,7 @@ import entity.ProposalEntity;
  * <br>
  * 更新履歴 2016/12/11 Yamamoto Takashi：新規作成 <br>
  *          2016/01/04 Yamamoto Takashi：createEntityに査定処理名の取得を追加 <br>
+ *          2016/01/05 Yamamoto Takashi：査定処理名の取得元をHashMap定数に変更 <br>
  */
 public final class EntityManager {
 
@@ -42,11 +43,8 @@ public final class EntityManager {
     // リクエストから入力値を取得
     entity.setAge( Integer.parseInt( request.getParameter( UnderWriteConst.PRAM_AGE ) ) );
     entity.setGender( request.getParameter( UnderWriteConst.PRAM_GENDER ) );
-
-    // PRAM_PRODUCTから保険商品と査定処理名を取得
-    String productInfo[] = ( request.getParameter( UnderWriteConst.PRAM_PRODUCT ) ).split( "," );
-    entity.setProduct( productInfo[0] );
-    entity.setUnderWrite( productInfo[1] );
+    entity.setProduct( request.getParameter( UnderWriteConst.PRAM_PRODUCT ) );
+    entity.setUnderWrite( UnderWriteConst.PRODUCT_UW_MAP.get( request.getParameter( UnderWriteConst.PRAM_PRODUCT ) ) );
 
     // 生成したエンティティを返却
     return entity;

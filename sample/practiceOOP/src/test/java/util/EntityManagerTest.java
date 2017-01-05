@@ -26,6 +26,7 @@ import entity.ProposalEntity;
  * <br>
  * 更新履歴 2016/12/31 Yamamoto Takashi：新規作成 <br>
  *          2017/01/04 Yamamoto Takashi：査定処理名を要素に追加 <br>
+ *          2017/01/05 Yamamoto Takashi：productのvalueを商品種類のみに再修正 <br>
  */
 public class EntityManagerTest {
 
@@ -65,13 +66,13 @@ public class EntityManagerTest {
     // mockのHttpServletRequestにパラメーターをセット
     given( request.getParameter( "age" ) ).willReturn( "0" );
     given( request.getParameter( "gender" ) ).willReturn( "male" );
-    given( request.getParameter( "product" ) ).willReturn( "cancer,model.CancerUnderWrite" );
+    given( request.getParameter( "product" ) ).willReturn( "Cancer" );
 
     // 検証用エンティティにパラメーターをセット
     ProposalEntity testEntity = new ProposalEntity();
     testEntity.setAge( 0 );
     testEntity.setGender( "male" );
-    testEntity.setProduct( "cancer" );
+    testEntity.setProduct( "Cancer" );
     testEntity.setUnderWrite( "model.CancerUnderWrite" );
 
     // #1 検証用エンティティとcreateEntity生成エンティティの一致を比較（年齢）
