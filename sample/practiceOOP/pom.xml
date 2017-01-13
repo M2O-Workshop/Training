@@ -61,7 +61,7 @@
       </plugin>
       <plugin>
         <!-- MavenコンソールにおけるjUnit出力全角文字の文字化け回避 -->
-        <!-- skipTests:trueでテストのスキップも可能 -->
+        <!-- skipTests:trueでテストをスキップ -->
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-surefire-plugin</artifactId>
         <configuration>
@@ -70,7 +70,7 @@
           <inputEncoding>UTF-8</inputEncoding>
           <outputEncoding>UTF-8</outputEncoding>
           <argLine>-Dfile.encoding=UTF-8</argLine>
-          <skipTests>false</skipTests>
+          <skipTests>true</skipTests>
         </configuration>
       </plugin>
     </plugins>

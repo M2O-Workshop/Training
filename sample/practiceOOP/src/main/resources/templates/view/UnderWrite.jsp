@@ -15,6 +15,8 @@
 <title>practiceOOP</title>
 <%-- JavaScript --%>
 <script type="text/javascript" src="../js/common.js"></script>
+<%-- CSS --%>
+<link rel="stylesheet" href="../css/style.css" type="text/css"/>
 </head>
 <body>
   <%
@@ -27,7 +29,9 @@
       entity = new ProposalEntity();
     }
   %>
+  <a class="button button16" href="#" onclick="return false;">Button</a>
   <%-- デバッグコード : entityの格納値を全出力--%>
+  <%--
   debug-code:
   <%= entity.getAge() %>
   <%= entity.getGender() %>
@@ -35,7 +39,7 @@
   <%= entity.getUnderWrite() %>
   <%= entity.isResult() %>
   <%= entity.getResultStr() %>
-
+  --%>
   <%-- 査定条件入力部 --%>
   <p>申し込み条件を入力して下さい。</p>
   <form action="./MainServlet" method="post" name="inputForm" id="inputForm" onSubmit="return inputAgeCheck()">
@@ -45,7 +49,7 @@
           年齢
         </td>
         <td>
-          <input type="text" name=<%= PRAM_AGE %> value=<%= entity.getAge() %> maxlength="3">
+          <input type="text" name=<%= PRAM_AGE %> value=<%= entity.getAge() %> size="10" maxlength="3">
         </td>
         <td id="ageErrorMsg">
           <%-- 初期状態は何も表示しない --%>
@@ -56,9 +60,11 @@
           性別
         </td>
         <td>
+          <div class="radio-box">
           <input type="radio" name=<%= PRAM_GENDER %> value=<%= GENDER_MALE %> <%= GENDER_MALE.equals(entity.getGender()) ? " checked=\"checked\"" : "" %>>男
           <input type="radio" name=<%= PRAM_GENDER %> value=<%= GENDER_FEMALE %> <%= GENDER_FEMALE.equals(entity.getGender()) ? " checked=\"checked\"" : "" %>>女
           <input type="radio" name=<%= PRAM_GENDER %> value=<%= GENDER_CORP %> <%= GENDER_CORP.equals(entity.getGender()) ? " checked=\"checked\"" : "" %>>法人
+          </div>
         </td>
         <td id="genderErrorMsg">
           <%-- 初期状態は何も表示しない --%>
@@ -69,11 +75,13 @@
           保険商品
         </td>
         <td>
+          <div class="select-box">
           <select name=<%= PRAM_PRODUCT %> id="product">
             <option value=<%= PRODUCT_CANCER %> <%= PRODUCT_CANCER.equals(entity.getProduct()) ? " selected=\"selected\"" : "" %>>がん保険</option>
             <option value=<%= PRODUCT_MEDICAL %> <%= PRODUCT_MEDICAL.equals(entity.getProduct()) ? " selected=\"selected\"" : "" %>>医療保険</option>
             <option value=<%= PRODUCT_ORDINARY %> <%= PRODUCT_ORDINARY.equals(entity.getProduct()) ? " selected=\"selected\"" : "" %>>普通保険</option>
           </select>
+          </div>
         </td>
         <td id="productErrorMsg">
           <%-- 初期状態は何も表示しない --%>
@@ -83,8 +91,8 @@
         <td>
         </td>
         <td>
-          <input type="submit" value="査定実行">
-          <input type="button" value="リセット" onclick="formReset()">
+          <input type="submit" value="査定実行" id="image-btn" >
+          <input type="button" value="リセット" id="image-btn" onclick="formReset()">
         </td>
       </tr>
     </table>

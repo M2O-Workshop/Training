@@ -1,0 +1,60 @@
+@CHARSET "UTF-8";
+/*
+----------------------------------------------------------------
+practiceOOP用共通スタイルシート
+  更新履歴
+  2017/01/06 Yamamoto Takashi：新規作成
+----------------------------------------------------------------
+*/
+
+@font-face {
+  font-family: 'NotoSansCJKtc';
+  src: url('../fonts/NotoSansCJKsc-DemiLight.otf') format('opentype');
+}
+html {
+  font-family: 'NotoSansCJKtc';
+  background-image:url("../images/13.jpg");
+  background-repeat: repeat-x;
+  background-color: #FFFFFF;
+}
+input {
+  font-family: 'NotoSansCJKtc'; 
+  background: #09C;
+  border: 1px solid #DDD;
+  color: #FFF;
+  text-shadow: 5px 5px 3px rgba(0,0,0,0.5);
+}
+option {
+  font-family: 'NotoSansCJKtc'; 
+}
+.select-box select {
+    font-family: 'NotoSansCJKtc'; 
+    background: #09C;
+    color: #FFFFFF;
+    text-shadow: 5px 5px 3px rgba(0,0,0,0.5);
+}
+.radio-box {
+    font-family: 'NotoSansCJKtc'; 
+    background: #09C;
+    color: #FFFFFF;
+    text-shadow: 5px 5px 3px rgba(0,0,0,0.5);
+}
+.button {
+    position: relative;
+    background-color: #1abc9c;
+    border-radius: 4px;
+    color: #fff;
+    line-height: 52px;
+    -webkit-transition: none;
+    transition: none;
+    box-shadow: 0 3px 0 #0e8c73;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, .3);
+}
+.button:hover {
+    background-color: #31c8aa;
+    box-shadow: 0 3px 0 #23a188;
+}
+.button:active {
+    top: 3px;
+    box-shadow: none;
+}
