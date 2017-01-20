@@ -4,6 +4,9 @@
 
 package util;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import javax.servlet.http.HttpServletRequest;
 
 import constant.UnderWriteConst;
@@ -16,8 +19,9 @@ import entity.ProposalEntity;
  * エンティティに対する汎用的な処理を定義 <br>
  * <br>
  * 更新履歴 2016/12/11 Yamamoto Takashi：新規作成 <br>
- *          2016/01/04 Yamamoto Takashi：createEntityに査定処理名の取得を追加 <br>
- *          2016/01/05 Yamamoto Takashi：査定処理名の取得元をHashMap定数に変更 <br>
+ *          2017/01/04 Yamamoto Takashi：createEntityに査定処理名の取得を追加 <br>
+ *          2017/01/05 Yamamoto Takashi：査定処理名の取得元をHashMap定数に変更 <br>
+ *          2017/01/20 Yamamoto Takashi：設定項目に処理日時を追加 <br>
  */
 public final class EntityManager {
 
@@ -45,6 +49,7 @@ public final class EntityManager {
     entity.setGender( request.getParameter( UnderWriteConst.PRAM_GENDER ) );
     entity.setProduct( request.getParameter( UnderWriteConst.PRAM_PRODUCT ) );
     entity.setUnderWrite( UnderWriteConst.PRODUCT_UW_MAP.get( request.getParameter( UnderWriteConst.PRAM_PRODUCT ) ) );
+    entity.setProcessDate( createDateStr() );
 
     // 生成したエンティティを返却
     return entity;
@@ -93,4 +98,18 @@ public final class EntityManager {
     return target >= entity.getAge();
   }
 
+  /**
+   * 現在日時チェックメソッド <br>
+   * マシン日付を取得しyyyy/MM/dd形式で返却する <br>
+   * <br>
+   * 
+   * @return String マシン日付
+   */
+  public static String createDateStr() {
+    // マシン日付を取得
+    Date date = new Date();
+    // 日付形式を指定し返却
+    SimpleDateFormat sdf = new SimpleDateFormat( UnderWriteConst.DATE_FORMAT );
+    return sdf.format( date );
+  }
 }

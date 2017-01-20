@@ -50,4 +50,61 @@ function formReset() {
   // 出力ラベルの初期化
   document.getElementById("ageErrorMsg").innerHTML = "";
   document.getElementById("resultLabel").innerHTML = "";
+  document.getElementById("dateLabel").innerHTML = "";
 }
+
+/**
+ * 年齢ポップオーバー
+ * 年齢ポップオーバーメッセージの定義
+ */
+$(function() {
+  // ポップオーバー文言
+  $('#popover_age').attr('data-content','被保険者の年齢を3桁までの半角数値で入力して下さい。');
+  // ポップオーバーアクション
+  $("[data-toggle=popover_age]").popover({
+    trigger: 'hover',// click,hover,focus,manualを選択出来る
+    html: true,// HTMLタグを含めるか
+  });
+});
+
+/**
+ * 性別ポップオーバー
+ * 性別ポップオーバーメッセージの定義
+ */
+$(function() {
+  // ポップオーバー文言
+  $('#popover_gender').attr('data-content','被保険者の性別もしくは法人を選択して下さい。');
+  // ポップオーバーアクション
+  $("[data-toggle=popover_gender]").popover({
+    trigger: 'hover',// click,hover,focus,manualを選択出来る
+    html: true,// HTMLタグを含めるか
+  });
+});
+
+/**
+ * 保険商品ポップオーバー
+ * 保険商品ポップオーバーメッセージの定義
+ */
+$(function() {
+  // ポップオーバー文言
+  $('#popover_product').attr('data-content','申し込む保険商品の種類を選択して下さい。');
+  // ポップオーバーアクション
+  $("[data-toggle=popover_product]").popover({
+    trigger: 'hover',// click,hover,focus,manualを選択出来る
+    html: true,// HTMLタグを含めるか
+  });
+});
+
+/**
+ * ボタンポップオーバー
+ * ボタンポップオーバーメッセージの定義
+ */
+$(function() {
+  // ポップオーバー文言
+  $('#popover_submit').attr('data-content','査定実行：査定を実行します。　リセット：入力を初期化します。');
+  // ポップオーバーアクション
+  $("[data-toggle=popover_submit]").popover({
+    trigger: 'hover',// click,hover,focus,manualを選択出来る
+    html: true,// HTMLタグを含めるか
+  });
+});
