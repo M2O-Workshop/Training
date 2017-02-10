@@ -76,9 +76,9 @@ public class UnderWriteConst {
   public static final String GENDER_CORP = "corporation";
 
   /** 引き受け可能を表すメッセージ. */
-  public static final String RESLUT_OK = "引き受け可能です。";
+  public static final String RESLUT_OK = "お引き受け可能です。";
   /** 引き受け不可を表すメッセージ. */
-  public static final String RESLUT_NG = "契約不可の条件です。";
+  public static final String RESLUT_NG = "ご契約不可の条件です。";
 
   /** 年齢を表すパラメータ名称. */
   public static final String PRAM_AGE = "age";

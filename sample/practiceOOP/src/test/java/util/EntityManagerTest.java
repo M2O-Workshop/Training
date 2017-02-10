@@ -102,11 +102,11 @@ public class EntityManagerTest {
 
     // #1 査定結果true："引き受け可能です。"
     testEntity.setResult( true );
-    assertThat( "引き受け可能です。", is( EntityManager.createResultStr( testEntity ).getResultStr() ) );
+    assertThat( "お引き受け可能です。", is( EntityManager.createResultStr( testEntity ).getResultStr() ) );
 
     // #2 査定結果false："契約不可の条件です。"
     testEntity.setResult( false );
-    assertThat( "契約不可の条件です。", is( EntityManager.createResultStr( testEntity ).getResultStr() ) );
+    assertThat( "ご契約不可の条件です。", is( EntityManager.createResultStr( testEntity ).getResultStr() ) );
 
   }
 

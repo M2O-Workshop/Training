@@ -34,12 +34,8 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-<!-- BackGroundDesign-->
-  <style>
-    body {background: url(../images/retina_wood.png) center center / cover no-repeat fixed;}
-  </style>
 </head>
-<body>
+<body class="bg">
   <%
     // 文字エンコードの指定
     request.setCharacterEncoding( ENCORD_TYPE );
@@ -70,7 +66,7 @@
         <th style="width:300px;"><p>Input Data</p></th>
         <th><p>Warning Message</p></th>
       </tr>
-      <tr class="success">
+      <tr>
         <td>
         <i class="glyphicon glyphicon-font"></i>　<label for="age">年齢:</label>
         <a href="javascript:void(0);" id="popover_age" data-toggle="popover_age" data-placement="top" title=""><span class="glyphicon glyphicon-question-sign"></span></a>
@@ -84,7 +80,7 @@
           <%-- 初期状態は何も表示しない --%>
         </td>
       </tr>
-      <tr class="info">
+      <tr>
         <td>
         <i class="glyphicon glyphicon-user"></i>　<label for="gender">性別:</label>
         <a href="javascript:void(0);" id="popover_gender" data-toggle="popover_gender" data-placement="top" title=""><span class="glyphicon glyphicon-question-sign"></span></a>
@@ -98,7 +94,7 @@
           <%-- 初期状態は何も表示しない --%>
         </td>
       </tr>
-      <tr class="warning">
+      <tr>
         <td>
         <i class="glyphicon glyphicon-tags"></i>　<label for="product">保険商品:</label>
         <a href="javascript:void(0);" id="popover_product" data-toggle="popover_product" data-placement="top" title=""><span class="glyphicon glyphicon-question-sign"></span></a>
@@ -133,10 +129,10 @@
     </table>
   </form>
 
-  <table class="table-hover">
+  <table>
     <tr>
       <td>
-        <p class="lead">　<i class="glyphicon glyphicon-ok"></i> 査定結果：</p>
+        <p class="lead">　<i class="glyphicon glyphicon-ok"></i>　査定結果：</p>
       </td>
       <td>
         <%-- 査定結果出力部 --%>
@@ -151,7 +147,7 @@
     </tr>
     <tr>
       <td>
-        <p class="lead">　<i class="glyphicon glyphicon-time"></i> 査定日時：</p>
+        <p class="lead">　<i class="glyphicon glyphicon-time"></i>　査定日時：</p>
       </td>
       <td>
         <%-- 処理日時出力部 --%>
@@ -165,5 +161,6 @@
       </td>
     </tr>
   </table>
+  <a href="http://wp.m2o-eiwa.1strentalserver.info/wp-login.php" target="_blank"><img src="../images/22992853_A0.png" alt="M2O WKS" class="rb"></a>
 </body>
 </html>
