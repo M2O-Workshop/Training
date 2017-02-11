@@ -15,39 +15,23 @@
 /* OverRide BackGround Design */
 
   body { /* 背景画像の指定 */
-    background: url(../images/2646438199_b309cffd65_b.jpg) center center / cover no-repeat fixed;
+    background: url(../images/PAK86_20150303191455_TP_V.jpg) center center / cover no-repeat fixed;
   }
 
   i { /* アイコンカラー */
-    color: #4169E1;
-    text-shadow:
-      0 0 100px #66CCFF,
-      0 0  50px #66CCFF,
-      0 0  10px #66CCFF;
+    color: #ff00ff;
   }
 
   a { /* ヘルプアイコンカラー */
-    color: #0066ff;
-    text-shadow:
-      0 0 100px #99ccff,
-      0 0  50px #99ccff,
-      0 0  10px #99ccff;
+    color: #ff00ff;
   }
 
   td { /* 表内サブテキスト */
     color: #ee0088;
-    text-shadow:
-      0 0 100px #ff3333,
-      0 0  50px #ff3333,
-      0 0  10px #ff3333;
   }
 
   h1,p,label { /* メインテキスト */
-    color: #000033;
-    text-shadow:
-      0 0 100px #66bbff,
-      0 0  50px #66bbff,
-      0 0  10px #66bbff;
+    color: #00008b;
   }
 
   .rb { /* ロゴマーク表示 */

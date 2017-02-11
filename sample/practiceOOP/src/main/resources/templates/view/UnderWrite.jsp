@@ -58,13 +58,14 @@
   --%>
   <%-- 査定条件入力部 --%>
   <h1>保険申込査定システム</h1>
-  <p class="lead"><small>　申し込み条件を入力して下さい。</small><i class="glyphicon glyphicon-pencil"></i></p>
+  <p class="lead"><small>申し込み条件を入力して下さい。</small><i class="glyphicon glyphicon-pencil"></i></p>
   <form action="./MainServlet" method="post" name="inputForm" id="inputForm" onSubmit="return inputAgeCheck()">
     <table class="table table-condensed" style="table-layout:fixed;">
       <tr>
         <th style="width:300px;"><p>Column Name</p></th> 
         <th style="width:300px;"><p>Input Data</p></th>
-        <th><p>Warning Message</p></th>
+        <th style="width:400px;"><p>Warning Message</p></th>
+        <th ><p></p></th>
       </tr>
       <tr>
         <td>
