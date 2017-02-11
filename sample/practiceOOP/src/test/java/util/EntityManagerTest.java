@@ -9,6 +9,9 @@ import static org.hamcrest.core.Is.*;
 import static org.mockito.BDDMockito.*;
 import static org.mockito.Mockito.*;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.junit.After;
@@ -25,8 +28,9 @@ import entity.ProposalEntity;
  * エンティティ管理処理を単独起動してテストを実行する <br>
  * <br>
  * 更新履歴 2016/12/31 Yamamoto Takashi：新規作成 <br>
- *          2017/01/04 Yamamoto Takashi：査定処理名を要素に追加 <br>
- *          2017/01/05 Yamamoto Takashi：productのvalueを商品種類のみに再修正 <br>
+ * 2017/01/04 Yamamoto Takashi：査定処理名を要素に追加 <br>
+ * 2017/01/05 Yamamoto Takashi：productのvalueを商品種類のみに再修正 <br>
+ * 2017/01/20 Yamamoto Takashi：現在日時取得メソッドのテストを追加 <br>
  */
 public class EntityManagerTest {
 
@@ -82,7 +86,8 @@ public class EntityManagerTest {
     // #3 検証用エンティティとcreateEntity生成エンティティの一致を比較（商品）
     assertThat( testEntity.getProduct(), is( EntityManager.createEntity( request ).getProduct() ) );
     // #4 検証用エンティティとcreateEntity生成エンティティの一致を比較（査定処理名）
-    assertThat( testEntity.getUnderWrite(), is( EntityManager.createEntity( request ).getUnderWrite() ) );
+    assertThat( testEntity.getUnderWrite(),
+        is( EntityManager.createEntity( request ).getUnderWrite() ) );
 
   }
 
@@ -97,11 +102,11 @@ public class EntityManagerTest {
 
     // #1 査定結果true："引き受け可能です。"
     testEntity.setResult( true );
-    assertThat( "引き受け可能です。", is( EntityManager.createResultStr( testEntity ).getResultStr() ) );
+    assertThat( "お引き受け可能です。", is( EntityManager.createResultStr( testEntity ).getResultStr() ) );
 
     // #2 査定結果false："契約不可の条件です。"
     testEntity.setResult( false );
-    assertThat( "契約不可の条件です。", is( EntityManager.createResultStr( testEntity ).getResultStr() ) );
+    assertThat( "ご契約不可の条件です。", is( EntityManager.createResultStr( testEntity ).getResultStr() ) );
 
   }
 
@@ -155,6 +160,20 @@ public class EntityManagerTest {
     testEntity.setAge( 51 );
     target = 50;
     assertThat( false, is( EntityManager.checkAge( testEntity, target ) ) );
+
+  }
+
+  /**
+   * {@link util.EntityManager#createDateStr()} のためのテスト・メソッド。 createDateStrテスト処理<br>
+   * createDateStrメソッドをテスト <br>
+   */
+  @Test
+  public void testCreateDateStr() {
+    Date date = new Date();
+    SimpleDateFormat sdf = new SimpleDateFormat( "yyyy/MM/dd HH:mm:ss" );
+
+    // #1 メソッド実行：マシン日付が所定の形式で返却されること
+    assertThat( sdf.format( date ), is( EntityManager.createDateStr() ) );
 
   }
 

@@ -18,6 +18,7 @@ import java.util.Map;
  * 2016/12/31 Yamamoto Takashi：処理コード値の追加、商品名称の修正 <br>
  * 2017/01/04 Yamamoto Takashi：処理コード値をクラス名を明示する形式に修正 <br>
  * 2017/01/05 Yamamoto Takashi：保険商品と査定処理のマッピング情報を追加 <br>
+ * 2017/01/20 Yamamoto Takashi：日付形式情報を追加 <br>
  */
 public class UnderWriteConst {
 
@@ -75,9 +76,9 @@ public class UnderWriteConst {
   public static final String GENDER_CORP = "corporation";
 
   /** 引き受け可能を表すメッセージ. */
-  public static final String RESLUT_OK = "引き受け可能です。";
+  public static final String RESLUT_OK = "お引き受け可能です。";
   /** 引き受け不可を表すメッセージ. */
-  public static final String RESLUT_NG = "契約不可の条件です。";
+  public static final String RESLUT_NG = "ご契約不可の条件です。";
 
   /** 年齢を表すパラメータ名称. */
   public static final String PRAM_AGE = "age";
@@ -92,5 +93,8 @@ public class UnderWriteConst {
   public static final String ENCORD_TYPE = "UTF-8";
   /** コンテンツの指定. */
   public static final String CONTENT_TYPE = "text/html; charset=UTF-8";
+
+  /** 日付形式の指定. */
+  public static final String DATE_FORMAT = "yyyy/MM/dd HH:mm:ss";
 
 }

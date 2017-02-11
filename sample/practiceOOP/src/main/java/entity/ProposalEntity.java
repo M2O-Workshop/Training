@@ -10,6 +10,7 @@ package entity;
  *  <br>
  *  更新履歴 2016/12/11 Yamamoto Takashi：新規作成 <br>
  *           2017/01/04 Yamamoto Takashi：査定処理名を要素に追加 <br>
+ *           2017/01/20 Yamamoto Takashi：処理日時を要素に追加 <br>
  */
 public class ProposalEntity {
 
@@ -26,6 +27,8 @@ public class ProposalEntity {
   private boolean result = false;
   /** 査定結果文字列 */
   private String resultStr = "";
+  /** 処理日時文字列 */
+  private String processDate = "";
 
   /**
    * デフォルトコンストラクタ <br>
@@ -128,6 +131,22 @@ public class ProposalEntity {
    */
   public void setResultStr( String resultStr ) {
     this.resultStr = resultStr;
+  }
+
+  /**
+   * 処理日時取得メソッド <br>
+   * @return processDate 処理日時
+   */
+  public String getProcessDate() {
+    return processDate;
+  }
+
+  /**
+   * 処理日時設定メソッド <br>
+   * @param processDate 処理日時
+   */
+  public void setProcessDate( String processDate ) {
+    this.processDate = processDate;
   }
 
 }
