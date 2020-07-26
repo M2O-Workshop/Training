@@ -1,36 +1,38 @@
+@CHARSET "UTF-8";
 /*
 ----------------------------------------------------------------
-ƒTƒ“ƒvƒ‹ƒAƒvƒŠ—pƒXƒ^ƒCƒ‹ƒV[ƒg
-  XV—š—ğ
-  2016/11/01 yamamoto-tFV‹Kì¬(SpringBoot hands on)
-  2016/11/12 yamamoto-tFalert alert-time‚ğ’Ç‰Á
-  2016/11/13 yamamoto-tFwebƒtƒHƒ“ƒg’è‹`‚ğ’Ç‰Á‚µAİ’è
+ã‚µãƒ³ãƒ—ãƒ«ã‚¢ãƒ—ãƒªç”¨ã‚¹ã‚¿ã‚¤ãƒ«ã‚·ãƒ¼ãƒˆ
+  æ›´æ–°å±¥æ­´
+  2016/11/01 yamamoto-tï¼šæ–°è¦ä½œæˆ(SpringBoot hands on)
+  2016/11/12 yamamoto-tï¼šalert alert-timeã‚’è¿½åŠ 
+  2016/11/13 yamamoto-tï¼šwebãƒ•ã‚©ãƒ³ãƒˆå®šç¾©ã‚’è¿½åŠ ã—ã€è¨­å®š
+  2016/11/20 yamamoto-tï¼šparticlegroundã®è¡¨ç¤ºè¨­å®šã‚’è¿½åŠ 
 ----------------------------------------------------------------
 */
 
-/* html:•¶‘‚Ìƒ‹[ƒg—v‘f */
+/* html:æ–‡æ›¸ã®ãƒ«ãƒ¼ãƒˆè¦ç´  */
 html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
 }
-/* body:•¶‘‚Ì–{‘Ì */
+/* body:æ–‡æ›¸ã®æœ¬ä½“ */
 body {
   margin: 0;
 }
 
-article, /* article:‹L–“™A’P“Æ‚ÅŠ®Œ‹‚·‚é—v‘f */
-aside,   /* aside:—]’kE•â‘«î•ñ‚ÌƒZƒNƒVƒ‡ƒ“ */
-details, /* details:’Ç‰Á‚Å“¾‚é‚±‚Æ‚Ì‚Å‚«‚é”õl‚â‘€ìè’i‚È‚Ç‚ÌÚ×î•ñ */
-figcaption, /* figcaption:}•\‚ÌƒLƒƒƒvƒVƒ‡ƒ“ */
-figure,     /* figure:•¶‘‚Ì–{•¶‚©‚çQÆ‚³‚ê‚é}•\AƒCƒ[ƒW */
-footer,     /* footer:‹L–ƒZƒNƒVƒ‡ƒ“‚Ìƒtƒbƒ^A‚ ‚é‚¢‚Í•¶‘‘S‘Ì‚Ìƒtƒbƒ^ */
-header,     /* header:‹L–ƒZƒNƒVƒ‡ƒ“‚Ìƒwƒbƒ_A‚ ‚é‚¢‚Í•¶‘‘S‘Ì‚Ìƒwƒbƒ_ */
-hgroup,     /* hgroup:h1-h6‚ğ‘©‚Ë‚é */
-main,       /* main:body—v‘f‚ÌƒƒCƒ“EƒRƒ“ƒeƒ“ƒc‚ğ•\‚· */
-nav,        /* nav:ƒEƒFƒuƒTƒCƒg“à‚Ì‘¼‚Ìƒy[ƒW‚Ö‚ÌƒŠƒ“ƒN‚âAƒy[ƒW“àƒŠƒ“ƒN‚Æ‚¢‚Á‚½ƒiƒrƒQ[ƒVƒ‡ƒ“‚ğ•\‚· */
-section,    /* section:”Ä—pƒZƒNƒVƒ‡ƒ“‚ğ•\‚· */
-summary {   /* summary:details‚Ì—v–ñAƒLƒƒƒvƒVƒ‡ƒ“‚ğ•\‚· */
+article, /* article:è¨˜äº‹ç­‰ã€å˜ç‹¬ã§å®Œçµã™ã‚‹è¦ç´  */
+aside,   /* aside:ä½™è«‡ãƒ»è£œè¶³æƒ…å ±ã®ã‚»ã‚¯ã‚·ãƒ§ãƒ³ */
+details, /* details:è¿½åŠ ã§å¾—ã‚‹ã“ã¨ã®ã§ãã‚‹å‚™è€ƒã‚„æ“ä½œæ‰‹æ®µãªã©ã®è©³ç´°æƒ…å ± */
+figcaption, /* figcaption:å›³è¡¨ã®ã‚­ãƒ£ãƒ—ã‚·ãƒ§ãƒ³ */
+figure,     /* figure:æ–‡æ›¸ã®æœ¬æ–‡ã‹ã‚‰å‚ç…§ã•ã‚Œã‚‹å›³è¡¨ã€ã‚¤ãƒ¡ãƒ¼ã‚¸ */
+footer,     /* footer:è¨˜äº‹ã‚»ã‚¯ã‚·ãƒ§ãƒ³ã®ãƒ•ãƒƒã‚¿ã€ã‚ã‚‹ã„ã¯æ–‡æ›¸å…¨ä½“ã®ãƒ•ãƒƒã‚¿ */
+header,     /* header:è¨˜äº‹ã‚»ã‚¯ã‚·ãƒ§ãƒ³ã®ãƒ˜ãƒƒãƒ€ã€ã‚ã‚‹ã„ã¯æ–‡æ›¸å…¨ä½“ã®ãƒ˜ãƒƒãƒ€ */
+hgroup,     /* hgroup:h1-h6ã‚’æŸã­ã‚‹ */
+main,       /* main:bodyè¦ç´ ã®ãƒ¡ã‚¤ãƒ³ãƒ»ã‚³ãƒ³ãƒ†ãƒ³ãƒ„ã‚’è¡¨ã™ */
+nav,        /* nav:ã‚¦ã‚§ãƒ–ã‚µã‚¤ãƒˆå†…ã®ä»–ã®ãƒšãƒ¼ã‚¸ã¸ã®ãƒªãƒ³ã‚¯ã‚„ã€ãƒšãƒ¼ã‚¸å†…ãƒªãƒ³ã‚¯ã¨ã„ã£ãŸãƒŠãƒ“ã‚²ãƒ¼ã‚·ãƒ§ãƒ³ã‚’è¡¨ã™ */
+section,    /* section:æ±ç”¨ã‚»ã‚¯ã‚·ãƒ§ãƒ³ã‚’è¡¨ã™ */
+summary {   /* summary:detailsã®è¦ç´„ã€ã‚­ãƒ£ãƒ—ã‚·ãƒ§ãƒ³ã‚’è¡¨ã™ */
   display: block;
 }
 audio,
@@ -40,6 +42,7 @@ video {
   display: inline-block;
   vertical-align: baseline;
 }
+
 audio:not([controls]) {
   display: none;
   height: 0;
@@ -898,8 +901,8 @@ body {
   line-height: 1.428571429;
   color: #f1f1f1;
   background-color: #f1f1f1;
-  /*”wŒi‰æ‘œ‚ğw’è :none‚Å–³‚µ*/
-  background-image: url("../images/199585462_95b971c927_b.jpg");
+  /*èƒŒæ™¯ç”»åƒã‚’æŒ‡å®š :noneã§ç„¡ã—*/
+  background-image: url("../images/xxx.jpg"); /* xxx.jpgã§ãƒ•ã‚¡ã‚¤ãƒ«åã‚’æŒ‡å®šã™ã‚‹ */
   background-size:cover; /* auto,contain,cover,%,px */
 }
 input,
@@ -4649,14 +4652,6 @@ a.thumbnail.active {
   border-color: #bce8f1;
   color: #31708f;
 }
-.alert-time {
-  /*background-color: #d9edf7;*/
-  background-color: rgba(255,255,255,0.1);
-  /*border-color: #bce8f1;*/
-  color: #31708f;
-  font-size: 26px;
-  /*font-family: 'HuiFont29';*/
-}
 .alert-info hr {
   border-top-color: #a6e1ec;
 }
@@ -6187,20 +6182,20 @@ button.close {
   }
 }
 /*
-@font-face‚ÅwebƒtƒHƒ“ƒg‚ğ’è‹`
-(g—p•û–@‚É‚Â‚¢‚Ä)
-  - ŠÂ‹«Ÿ‘æ‚ÅHTML’P“Æ‹N“®‚Å‚Í”½‰f‚³‚ê‚¸AƒT[ƒo[ã‚Å‚Ì‹N“®‚ª•K—v‚È“_‚É’ˆÓ
-  - ‚Ü‚½AƒtƒHƒ“ƒgƒtƒ@ƒCƒ‹–¼Ì‚Í”¼Šp‰p”š‚Æ‚·‚é‚±‚Æ
-  - ƒuƒ‰ƒEƒU‚Ìí•ÊAƒo[ƒWƒ‡ƒ“Ÿ‘æ‚Å‘Î‰‚µ‚Ä‚¢‚éŒ`®‚ªŒˆ‚Ü‚é‚ªA
-    ƒƒWƒƒ[‚Èƒuƒ‰ƒEƒU‚ÌÅV”Å‚Í‘Î‰‚µ‚Ä‚¢‚éŒ`®‚à‘½‚¢
-  - ‚¢‚¸‚ê‚Æ‚à“Ç‚İ‚İ‚É¸”s‚µ‚½ê‡‚ÍAƒuƒ‰ƒEƒU‚ÌƒfƒtƒHƒ‹ƒgƒtƒHƒ“ƒg‚Å•\¦‚³‚ê‚é
-  - ƒtƒHƒ“ƒgƒtƒ@ƒCƒ‹Ÿ‘æ‚Å—pˆÓ‚³‚ê‚Ä‚¢‚é•¶š”‚ªˆÙ‚È‚é
-(ƒtƒ@ƒCƒ‹Œ`®‚É‚Â‚¢‚Ä)
-  - EOTiIE 6-8‚Ì‚İj
-  - TTFiWindowsAMacOS‚Æ‚à‚É‘S”Ê“I‚Ég—p‰Â”\‚È‚à‚Ì‚ª‘½‚¢j
-  - OPFi“¯ãj
-  - WOFFiIE 9-AAndroid 4.4-j
-  - WOFF2iFirefoxAChromeAOperaAAndroid 5- ‚Ì‚İ‘Î‰j
+@font-faceã§webãƒ•ã‚©ãƒ³ãƒˆã‚’å®šç¾©
+(ä½¿ç”¨æ–¹æ³•ã«ã¤ã„ã¦)
+  - ç’°å¢ƒæ¬¡ç¬¬ã§HTMLå˜ç‹¬èµ·å‹•ã§ã¯åæ˜ ã•ã‚Œãšã€ã‚µãƒ¼ãƒãƒ¼ä¸Šã§ã®èµ·å‹•ãŒå¿…è¦ãªç‚¹ã«æ³¨æ„
+  - ã¾ãŸã€ãƒ•ã‚©ãƒ³ãƒˆãƒ•ã‚¡ã‚¤ãƒ«åç§°ã¯åŠè§’è‹±æ•°å­—ã¨ã™ã‚‹ã“ã¨
+  - ãƒ–ãƒ©ã‚¦ã‚¶ã®ç¨®åˆ¥ã€ãƒãƒ¼ã‚¸ãƒ§ãƒ³æ¬¡ç¬¬ã§å¯¾å¿œã—ã¦ã„ã‚‹å½¢å¼ãŒæ±ºã¾ã‚‹ãŒã€
+    ãƒ¡ã‚¸ãƒ£ãƒ¼ãªãƒ–ãƒ©ã‚¦ã‚¶ã®æœ€æ–°ç‰ˆã¯å¯¾å¿œã—ã¦ã„ã‚‹å½¢å¼ã‚‚å¤šã„
+  - ã„ãšã‚Œã¨ã‚‚èª­ã¿è¾¼ã¿ã«å¤±æ•—ã—ãŸå ´åˆã¯ã€ãƒ–ãƒ©ã‚¦ã‚¶ã®ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆãƒ•ã‚©ãƒ³ãƒˆã§è¡¨ç¤ºã•ã‚Œã‚‹
+  - ãƒ•ã‚©ãƒ³ãƒˆãƒ•ã‚¡ã‚¤ãƒ«æ¬¡ç¬¬ã§ç”¨æ„ã•ã‚Œã¦ã„ã‚‹æ–‡å­—æ•°ãŒç•°ãªã‚‹
+(ãƒ•ã‚¡ã‚¤ãƒ«å½¢å¼ã«ã¤ã„ã¦)
+  - EOTï¼ˆIE 6-8ã®ã¿ï¼‰
+  - TTFï¼ˆWindowsã€MacOSã¨ã‚‚ã«å…¨èˆ¬çš„ã«ä½¿ç”¨å¯èƒ½ãªã‚‚ã®ãŒå¤šã„ï¼‰
+  - OPFï¼ˆåŒä¸Šï¼‰
+  - WOFFï¼ˆIE 9-ã€Android 4.4-ï¼‰
+  - WOFF2ï¼ˆFirefoxã€Chromeã€Operaã€Android 5- ã®ã¿å¯¾å¿œï¼‰
 */
 @font-face {
   font-family: 'HuiFont29';
@@ -6268,7 +6263,7 @@ h3 {
   margin-bottom: 10px;
   font-weight: 700;
 }
-/* strong:‹­‚¢‹­’² */
+/* strong:å¼·ã„å¼·èª¿ */
 strong {
   font-weight: 700;
   font-family: "montserratregular", sans-serif;
@@ -6454,4 +6449,47 @@ table td.action-column {
 }
 .help-block {
   color: #f1f1f1;
+}
+
+/* æ—¥ä»˜è¡¨ç¤ºã‚¨ãƒªã‚¢ã®ãƒ¬ã‚¤ã‚¢ã‚¦ãƒˆè¨­å®š */
+.alert-time {
+  /*background-color: #d9edf7;*/
+  background-color: rgba(204,204,255,0.1);
+  /*border-color: #bce8f1;*/
+  color: #ffffff;
+  font-size: 24px;
+  font-weight: bold;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  /*font-family: 'HuiFont29';*/
+}
+
+/* Canvasã®ä¸‹åœ°ã®ãƒ¬ã‚¤ã‚¢ã‚¦ãƒˆè¨­å®š */
+.pt {
+  position: fixed;
+  z-index: -100;
+  left: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  background-image: url("../images/clouds-seamless-background-824.jpg");
+  /*background-color: rgba(0,0,255,0.1);*/
+  background-size: cover;
+}
+
+/* particlegroundãŒä½œæˆã™ã‚‹Canvasã®ãƒ¬ã‚¤ã‚¢ã‚¦ãƒˆè¨­å®š */
+canvas.pg-canvas {
+  position: fixed;
+  z-index: -50;
+  left: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  background-color: rgba(255,255,255,0.4); /*è–„è†œ*/
+  background-size: cover;
 }

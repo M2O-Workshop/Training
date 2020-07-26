@@ -14,9 +14,10 @@ import javax.persistence.Table;
  *         サンプル用エンティティ <br />
  *         DB接続検証用に作成 <br />
  *         更新履歴 2016/11/01 yamamoto-t：新規作成 <br />
+ *                  2020/07/26 yamamoto-t：テーブル名を修正 <br />
  */
 @Entity
-@Table(name = "test01_yamamoto") // memo:デフォルトはクラス名=テーブル名（省略可）
+@Table(name = "test01") // memo:デフォルトはクラス名=テーブル名（省略可）
 public class WorkEntity {
 
   @Id // memo:エンティティの主キーとなるオブジェクト１つのみに@Idを付ける（省略不可）

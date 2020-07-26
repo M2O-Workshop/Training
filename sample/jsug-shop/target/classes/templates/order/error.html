@@ -5,7 +5,8 @@
     <title>注文エラー</title>
     <link rel="stylesheet" type="text/css" th:href="@{/css/wro.css}" href="../../static/css/wro.css"/>
 </head>
-<body>
+<!-- particleground用にclass="pt"を適用する -->
+<body onLoad="setTimer()" class="pt">
 
 <nav class="navbar navbar-default" role="navigation">
     <div class="container">
@@ -31,5 +32,12 @@
         <span th:text="${error}">エラーが発生しました</span>。<a th:href="@{/}" href="../goods/showGoods.html">ホーム</a>に戻ってやり直してください。
     </div>
 </div>
+    <!-- JavaScript -->
+    <script type="text/javascript" th:src="@{/js/jquery-3.1.1.min.js}" src="../static/js/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" th:src="@{/js/jquery.particleground.min.js}" src="../../static/js/jquery.particleground.min.js"></script>
+
+    <script type="text/javascript" src="../../static/js/common.js" th:src="@{/js/common.js}"></script>
+    <div class="alert alert-time" id="ClockArea"></div>
+
 </body>
 </html>

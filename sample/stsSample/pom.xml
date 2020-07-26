@@ -24,7 +24,8 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-    <java.version>1.7</java.version>
+    <java.version>1.8</java.version>
+    <maven.test.skip>true</maven.test.skip>
   </properties>
 
  <!-- thymeleafを実装するために必要。 -->
@@ -56,13 +57,39 @@
       <artifactId>spring-boot-starter-tomcat</artifactId>
       <scope>provided</scope>
     </dependency>
+ 
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-test</artifactId>
       <scope>test</scope>
     </dependency>
-  </dependencies>
 
+ <!-- 仮想サーバーのJava11用の設定。 -->
+ <!-- JAXBExceptionが標準のクラスパスから除外されているため、依存関係を定義。 -->
+
+  <!-- https://mvnrepository.com/artifact/javax.xml.bind/jaxb-api -->
+    <dependency>
+      <groupId>javax.xml.bind</groupId>
+      <artifactId>jaxb-api</artifactId>
+      <version>2.3.0</version>
+    </dependency>
+
+  <!-- https://mvnrepository.com/artifact/com.sun.xml.bind/jaxb-core -->
+    <dependency>
+      <groupId>com.sun.xml.bind</groupId>
+      <artifactId>jaxb-core</artifactId>
+      <version>2.3.0</version>
+    </dependency>
+
+  <!-- https://mvnrepository.com/artifact/com.sun.xml.bind/jaxb-impl -->
+    <dependency>
+      <groupId>com.sun.xml.bind</groupId>
+      <artifactId>jaxb-impl</artifactId>
+      <version>2.3.0</version>
+    </dependency>
+
+  </dependencies>
+ 
  <!-- MavenとSpringBootを連動させる設定。 -->
   <build>
     <plugins>
@@ -72,6 +99,5 @@
       </plugin>
     </plugins>
   </build>
-
 
 </project>
